@@ -18,6 +18,8 @@ import { UpdatepopupComponent } from './auth/updatepopup/updatepopup.component';
 import { CustomerComponent } from './auth/customer/customer.component';
 import { ProductTypeComponent } from './shared/components/products/product-type/product-type.component';
 import { GameListComponent } from './shared/components/games/game-list/game-list.component';
+import { SidebarComponent } from './shared/components/sidebar/sidebar.component';
+import { ContentComponent } from './shared/components/content/content.component';
 
 
 @NgModule({
@@ -32,6 +34,8 @@ import { GameListComponent } from './shared/components/games/game-list/game-list
     CustomerComponent,
     ProductTypeComponent,
     GameListComponent,
+    SidebarComponent,
+    ContentComponent,
   ],
   imports: [
     BrowserModule,
