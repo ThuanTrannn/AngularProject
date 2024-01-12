@@ -1,0 +1,17 @@
+<section class="showcase">
+    <header>
+        <h2 class="logo">ThuanTV</h2>
+        <button class="toggle" (click)="toggleMenu()"></button>
+    </header>
+
+</section>
+<div class="menu">
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="/login">Login</a></li>
+        <li><a href="/register">Register</a></li>
+        <li> <a *ngIf="isadmin" routerLink="/user">User</a></li>
+        <li><a routerLink="/customer">Customer</a></li>
+        <li> <a routerLink="/login">Logout</a></li>
+    </ul>
+</div>

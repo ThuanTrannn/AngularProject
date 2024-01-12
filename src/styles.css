@@ -1,1 +1,44 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+
+.active-menu {
+    margin-right: 300px;
+}
+
+.active-menu .menu {
+    right: 0 !important;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.mdc-button {
+    margin: 5px !important;
+}
+
+.mat-mdc-form-field {
+    width: 100%;
+}
+
+.content {
+    display: block !important;
+}

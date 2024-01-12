@@ -1,0 +1,18 @@
+
+<section class="game-section container">
+    <h2 class="line-title">Trending games</h2>
+    <owl-carousel-o [options]="customOptions">
+        <ng-container *ngFor="let game of gamelist; let i = index">
+            <ng-template carouselSlide [id]="game.id" [width]="game.width">
+                <div class="item">
+                    <img [src]="game.image" [alt]="game.alt"
+                    [title]="game.title">
+                    <div class="item-desc">
+                        <h3>{{ game.title }}</h3>
+                        <p>{{ game.description }}</p>
+                    </div>
+                </div>
+            </ng-template>
+        </ng-container>
+    </owl-carousel-o>
+</section>
