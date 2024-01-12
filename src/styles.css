@@ -2216,6 +2216,12 @@ body.dark-theme .sidebar {
     width: 180px;
 }
 
+body.dark-theme .table-responsive .table td,
+body.dark-theme .table-responsive .table th {
+    background-color: #312934;
+    color: #f3f3f3;
+}
+
 @media (max-width: 37.5em) {
     body.dark-theme .sidebar {
         display: none;
