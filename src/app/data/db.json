@@ -2,9 +2,9 @@
   "user": [
     {
       "id": "admin",
-      "name": "NT Infotech",
-      "password": "Test$1234",
-      "email": "test@gmail.com",
+      "name": "Admin",
+      "password": "Admin@123",
+      "email": "admin@gmail.com",
       "gender": "male",
       "role": "admin",
       "isactive": true,
@@ -13,54 +13,12 @@
       }
     },
     {
-      "id": "testuser",
-      "name": "Test User",
-      "password": "Test@1234",
-      "email": "test@in.com",
+      "id": "admin2",
+      "name": "Admin2",
+      "password": "Admin@123",
+      "email": "admin2@gmail.com",
       "gender": "male",
       "role": "user",
-      "isactive": false
-    },
-    {
-      "id": "Jhon1",
-      "name": "NT Infotech",
-      "password": "Test@1233",
-      "email": "te@in.com",
-      "gender": "male",
-      "role": "tech",
-      "isactive": true,
-      "address": {
-        "area": "chennai"
-      }
-    },
-    {
-      "id": "ntuser",
-      "name": "ramesh",
-      "password": "Test@1234",
-      "email": "te@in.com",
-      "gender": "male",
-      "role": "tech",
-      "isactive": true,
-      "address": {
-        "area": "banglore"
-      }
-    },
-    {
-      "id": "DevTest",
-      "name": "Test",
-      "password": "ADmin@123",
-      "email": "DevTest@gmail.com",
-      "gender": "male",
-      "role": "",
-      "isactive": false
-    },
-    {
-      "id": "DevTest",
-      "name": "DevTest",
-      "password": "DevTest@123",
-      "email": "DevTest@gmail.com",
-      "gender": "male",
-      "role": "",
       "isactive": false
     }
   ],
@@ -68,12 +26,7 @@
     {
       "code": "user",
       "name": "User",
-      "id": "1e54"
-    },
-    {
-      "code": "tech",
-      "name": "Technician",
-      "id": "e09f"
+      "id": "admin2"
     }
   ],
   "menu": [
@@ -262,6 +215,116 @@
       "title": "Far Cry 5",
       "image": "https://www.yudiz.com/codepen/expandable-animated-card-slider/far-cry-5.jpg",
       "description": "Far Cry 5 is a 2018 first-person shooter game developed by Ubisoft. which was a community-created mod for Blizzard Entertainment's Warcraft III."
+    }
+  ],
+  "trending": [
+    {
+      "image": "https://i.seadn.io/s/raw/files/01949bab8df2e7d4c6ef316241f99613.png?auto=format&dpr=1&w=384",
+      "title": "NiftyNafty #1312",
+      "artist": "SquareeAgency",
+      "price": {
+        "value": 20.99,
+        "currency": "$"
+      }
+    },
+    {
+      "image": "https://i.seadn.io/gae/gjAsfK0KNXyVEcy-8DAAy0p7kPY3vl6t7XsbcO3YEDriWg-VXNYHpMSCIUtfTunkaUjZlqDwPc8sJbrQOPc2BNiotr7b4roHeOhMGQ?auto=format&dpr=1&w=384",
+      "title": "NiftyNafty #1325",
+      "artist": "KKKSpecial",
+      "price": {
+        "value": 25.99,
+        "currency": "$"
+      }
+    },
+    {
+      "image": "https://i.seadn.io/gae/TspxJP2dL0njKtkOkgNqSFGfQYfGtDtUhaN25p9ZqhXbctzj4KD8nKx30lcoroJ8ZFxFhgnHINQZ2Go3BpJFQNzFamkWLdfaCO2N3A?auto=format&dpr=1&w=384",
+      "title": "NiftyNafty #1400",
+      "artist": "Topometa3DD",
+      "price": {
+        "value": 18.99,
+        "currency": "$"
+      }
+    }
+  ],
+  "selling-products": [
+    {
+      "id": 1,
+      "name": "NiftyNafty #1312",
+      "price": "$19.88",
+      "sales": "$15.88",
+      "qty": 3000,
+      "url": ""
+    },
+    {
+      "id": 2,
+      "name": "NiftyNafty #1315",
+      "price": "$25.00",
+      "sales": "$18.88",
+      "qty": 5500,
+      "url": ""
+    },
+    {
+      "id": 3,
+      "name": "NiftyNafty #1325",
+      "price": "$26.88",
+      "sales": "$16.55",
+      "qty": 1987,
+      "url": ""
+    },
+    {
+      "id": 4,
+      "name": "NiftyNafty #1318",
+      "price": "$26.88",
+      "sales": "$19.99",
+      "qty": 37020,
+      "url": ""
+    }
+  ],
+  "expensive-goods": [
+    {
+      "image": "https://i.seadn.io/gae/Q9fxQc4shTIPGOqvqqZ-swzNWDDghYFBko2SbcIKUfn9arQ0gCpQAty8Y0m9Wpc4MOI3L3Xy9_msrIJSMBU91vcgwpHbvfKGrJ6g?auto=format&dpr=1&w=384",
+      "title": "NiftyNafty #1325",
+      "artist": "KKKSpecial",
+      "price": {
+        "value": 25.99,
+        "currency": "$"
+      }
+    },
+    {
+      "image": "https://i.seadn.io/gae/eKSxA4TbkK113M_ZxhRbYYWrCchaSOR7WxDCbPqkr_fiPwxbxnMPEno6omanBZnSw4IemrKQqt_XUlV-M7zPPvOJqVTI9MfR9OVSvw?auto=format&dpr=1&w=384",
+      "title": "NiftyNafty #1325",
+      "artist": "KKKSpecial",
+      "price": {
+        "value": 25.99,
+        "currency": "$"
+      }
+    },
+    {
+      "image": "https://i.seadn.io/gae/FnZoDWk8djgXmtVZYYZIjxqvqKOLifiWTA7FmPrcmcdrJJQzNTEpwcnNGMghw64CDVjaKin2V8d500M9Blrek32HkhjPztocdcSupw?auto=format&dpr=1&w=384",
+      "title": "NiftyNafty #1325",
+      "artist": "KKKSpecial",
+      "price": {
+        "value": 25.99,
+        "currency": "$"
+      }
+    },
+    {
+      "image": "https://i.seadn.io/gae/PmnbJjtQp1BG35AzFu6Lss0vuAUiGTSIkOli5AEl-GQl53QdFuShhXN1BvkSUtmDcYSpfdbJHRw_n96CKzw7sUsdrxSRejwb3T-N?auto=format&dpr=1&w=384",
+      "title": "NiftyNafty #1325",
+      "artist": "KKKSpecial",
+      "price": {
+        "value": 25.99,
+        "currency": "$"
+      }
+    },
+    {
+      "image": "https://i.seadn.io/gae/SsNP_lbc4IGFFGQnIH_nNpVjbgynnrT806VcpH-XGFKs2YBAojl0JCqhPldPz6m7KLP6aUdK83O-XlqNhe7iMise90u8Sgrsse7G1w?auto=format&dpr=1&w=384",
+      "title": "NiftyNafty #1325",
+      "artist": "KKKSpecial",
+      "price": {
+        "value": 25.99,
+        "currency": "$"
+      }
     }
   ]
 }

@@ -31,7 +31,7 @@ export class AuthService {
     return this.http.get('http://localhost:3000/role');
   }
 
-  isloggedin(){
+  isLoggedIn(){
     return sessionStorage.getItem('username')!=null;
   }
 
@@ -47,5 +47,10 @@ export class AuthService {
 
   deleteAccount(id: any) {
     return this.http.delete(this.apiurl + '/' + id);
+  }
+
+  logout() {
+    sessionStorage.removeItem('username');
+    sessionStorage.removeItem('role');
   }
 }

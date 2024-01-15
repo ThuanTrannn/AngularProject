@@ -17,7 +17,9 @@ import { ListuserComponent } from './auth/listuser/listuser.component';
 import { UpdatepopupComponent } from './auth/updatepopup/updatepopup.component';
 import { CustomerComponent } from './auth/customer/customer.component';
 import { ProductTypeComponent } from './shared/components/products/product-type/product-type.component';
-import { GameListComponent } from './shared/components/games/game-list/game-list.component';
+import { SidebarComponent } from './shared/components/sidebar/sidebar.component';
+import { ContentComponent } from './shared/components/content/content.component';
+import { HomepagesComponent } from './shared/components/homepages/homepages.component';
 
 
 @NgModule({
@@ -31,7 +33,9 @@ import { GameListComponent } from './shared/components/games/game-list/game-list
     UpdatepopupComponent,
     CustomerComponent,
     ProductTypeComponent,
-    GameListComponent,
+    SidebarComponent,
+    ContentComponent,
+    HomepagesComponent,
   ],
   imports: [
     BrowserModule,

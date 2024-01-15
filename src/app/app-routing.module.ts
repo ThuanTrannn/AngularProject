@@ -5,8 +5,10 @@ import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { ListuserComponent } from './auth/listuser/listuser.component';
 import { CustomerComponent } from './auth/customer/customer.component'; 
+import { HomepagesComponent } from './shared/components/homepages/homepages.component'; 
 
 const routes: Routes = [
+  {component: HomepagesComponent, path: ''},
   {component: LoginComponent, path: 'login'},
   {component: RegisterComponent, path: 'register'},
   {component: ListuserComponent,path:'user',canActivate:[AuthGuard]},

@@ -1,0 +1,166 @@
+<div class="content nft-custom-scroll">
+    <div class="content-left">
+        <section class="trending">
+            <h2>TRENDING PRODUCT's</h2>
+            <div class="trending-cards">
+                <div *ngFor="let nft of listProducts" class="white-box">
+                    <a href="javascript:;">
+                        <img [src]="nft.image" alt="{{ nft.title }} Image"
+                            class="big-pic">
+                        <div>
+                            <div class="trending-card-bottom">
+                                <div class="text ml-8">
+                                    <div class="text-500 text-black">{{
+                                        nft.title }}</div>
+                                    <div
+                                        class="text-12 text-dark-gray">{{
+                                        nft.artist }}</div>
+                                </div>
+                            </div>
+                            <div class="trending-price">
+                                <svg width="24" height="24"
+                                    viewBox="0 0 12 12" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M6 0.875L2.875 6.125L6 8L9.125 6.125L6 0.875ZM2.875 6.75L6 11.125L9.125 6.75L6 8.625L2.875 6.75Z"
+                                        fill="white" />
+                                </svg>
+                                <div class="text-24 font-number">Price: {{
+                                    nft.price.value }}<span
+                                        class="ml-4">{{
+                                        nft.price.currency }}</span></div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section class="selling-products">
+            <div class="white-box">
+                <div class="d-flex align-center justify-space mb-16">
+                    <h2 class="bold text-color-p mb-0">Selling products</h2>
+                    <a href="jabascript:;" class="text-14 bold">View all</a>
+                </div>
+
+                <div class="table-responsive nft-custom-scroll">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Products Name</th>
+                                <th class="text-center">Price ($)</th>
+                                <th class="text-center">Price Sale ($)</th>
+                                <th class="text-right">Qty</th>
+                                <th class="text-right">View</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let product of sellingProducts">
+                                <td><span class="font-number mr-4">{{
+                                        product.id}})</span>{{ product.name
+                                    }}</td>
+                                <td class="font-number text-center">{{
+                                    product.price }}</td>
+                                <td class="font-number text-center">{{
+                                    product.sales }}</td>
+                                <td class="text-right font-number">{{product.qty
+                                    }}</td>
+                                <td class="text-right mr-4">View products</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="content-right">
+        <div class="balance white-box mb-24 text-center">
+            <h3 class="bold text-color-p mb-0">Expensive Products</h3>
+            <div class="trending-cards layout1">
+                <owl-carousel-o [options]="customOptions">
+                    <ng-container *ngFor="let nft of expensiveProducts"
+                        class="box">
+                        <ng-template carouselSlide>
+                            <div class="carou-item">
+                                <img [src]="nft.image"
+                                    alt="{{ nft.title }} Image"
+                                    class="big-pic">
+                                <div>
+                                    <div class="trending-card-bottom">
+                                        <div class="text">
+                                            <div
+                                                class="text-500 text-black">{{nft.title
+                                                }}</div>
+                                            <div
+                                                class="text-12 text-dark-gray">{{nft.artist
+                                                }}</div>
+                                        </div>
+                                    </div>
+                                    <div class="trending-price">
+                                        <svg width="24" height="24"
+                                            viewBox="0 0 12 12" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M6 0.875L2.875 6.125L6 8L9.125 6.125L6 0.875ZM2.875 6.75L6 11.125L9.125 6.75L6 8.625L2.875 6.75Z"
+                                                fill="white" />
+                                        </svg>
+                                        <div class="text-24 font-number">Price:
+                                            {{
+                                            nft.price.value }}<span
+                                                class="ml-4">{{
+                                                nft.price.currency
+                                                }}</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </ng-template>
+                    </ng-container>
+                </owl-carousel-o>
+            </div>
+        </div>
+        <div class="balance white-box mb-24 text-center">
+            <h3 class="bold text-d0011b-p mb-0">Sale Off</h3>
+            <div class="trending-cards layout1">
+                <owl-carousel-o [options]="customOptions">
+                    <ng-container *ngFor="let nft of expensiveProducts"
+                        class="box">
+                        <ng-template carouselSlide>
+                            <div class="carou-item">
+                                <img [src]="nft.image"
+                                    alt="{{ nft.title }} Image"
+                                    class="big-pic">
+                                <div>
+                                    <div class="trending-card-bottom">
+                                        <div class="text">
+                                            <div
+                                                class="text-500 text-black">{{nft.title
+                                                }}</div>
+                                            <div
+                                                class="text-12 text-dark-gray">{{nft.artist
+                                                }}</div>
+                                        </div>
+                                    </div>
+                                    <div class="trending-price sale">
+                                        <svg width="24" height="24"
+                                            viewBox="0 0 12 12" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M6 0.875L2.875 6.125L6 8L9.125 6.125L6 0.875ZM2.875 6.75L6 11.125L9.125 6.75L6 8.625L2.875 6.75Z"
+                                                fill="white" />
+                                        </svg>
+                                        <div class="text-20 font-number">Price:
+                                            {{
+                                            nft.price.value }}<span
+                                                class="ml-4">{{
+                                                nft.price.currency
+                                                }}</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </ng-template>
+                    </ng-container>
+                </owl-carousel-o>
+            </div>
+        </div>
+    </div>
+</div>
