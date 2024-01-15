@@ -22,9 +22,8 @@ export class ListuserComponent implements AfterViewInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  ngAfterViewInit(): void {
+  ngAfterViewInit(): void { }
 
-  }
   LoadUser() {
     this.service.Getall().subscribe(res => {
       this.userlist = res;
@@ -36,7 +35,7 @@ export class ListuserComponent implements AfterViewInit {
   displayedColumns: string[] = ['username', 'name', 'email', 'status', 'role', 'action'];
 
   updateuser(code: any) {
-    this.OpenDialog('1000ms', '600ms', code);
+    this.OpenDialog('600ms', '300ms', code);
   }
 
   OpenDialog(enteranimation: any, exitanimation: any, code: string) {

@@ -188,6 +188,10 @@ q:after {
     color: #7f30a4 !important;
 }
 
+.text-d0011b-p {
+    color: #d0011b !important;
+}
+
 .text-color-s {
     color: #f89a0c !important;
 }
@@ -1739,14 +1743,19 @@ body {
 .container {
     max-width: 1280px;
     padding: 0;
-    max-height: 860px;
+    max-height: max-content;
     width: 100%;
-    height: 90vh;
+    height: max-content;
     background-color: #fff;
     backdrop-filter: blur(18px);
     border-radius: 40px;
     display: flex;
     box-shadow: 0 0 80px rgba(127, 48, 164, 0.7);
+}
+
+.main-container {
+    display: flex;
+    width: 1280px;
 }
 
 @media (max-width: 37.5em) {
@@ -1999,6 +2008,14 @@ header .new-notif {
     margin-left: 1.25rem;
 }
 
+.trending-cards.layout1 {
+    display: block;
+    margin: 0;
+}
+.trending-cards.layout1 .trending-card-bottom {
+    justify-content: center;
+}
+
 .trending-cards li .big-pic {
     border-radius: 10px;
 }
@@ -2032,6 +2049,9 @@ header .new-notif {
     height: 100%;
     object-fit: cover;
 }
+.trending-cards .trending-price.sale {
+    background-color: #d0011b;
+}
 
 .trending-cards .trending-price {
     background-color: #7f30a4;
@@ -2047,6 +2067,14 @@ header .new-notif {
     align-items: center;
     white-space: nowrap;
     border: 5px solid #fff;
+}
+
+.trending-cards.layout1 .trending-price {
+    top: 0;
+}
+
+.trending-cards.layout1 .carou-item {
+    padding-top: 23px;
 }
 
 @media (max-width: 64em) {
@@ -2070,11 +2098,11 @@ header .new-notif {
     }
 }
 
-.top-creators {
+.selling-products {
     margin: 2rem 0 0;
 }
 
-.top-creators .white-box {
+.selling-products .white-box {
     padding: 20px;
 }
 
@@ -2103,6 +2131,7 @@ header .new-notif {
 
 .table-responsive .table td {
     padding: 12px 6px;
+    text-transform: capitalize;
 }
 
 .table-responsive .table .font-number {
@@ -2123,7 +2152,7 @@ header .new-notif {
 }
 
 .color-scheme {
-    margin: 3rem auto 0;
+    margin: 2rem auto 0;
 }
 
 .color-scheme .light,
@@ -2194,9 +2223,9 @@ body.dark-theme {
 
 body.dark-theme .container {
     max-width: 1280px;
-    max-height: 860px;
+    max-height: max-content;
     width: 100%;
-    height: 90vh;
+    height: max-content;
     background-color: #312934;
     color: #f3f3f3;
     backdrop-filter: blur(18px);
@@ -2216,10 +2245,42 @@ body.dark-theme .sidebar {
     width: 180px;
 }
 
+body.dark-theme .mat-mdc-paginator,
+body.dark-theme .mat-mdc-card {
+    background-color: #312934 !important;
+    color: #f3f3f3 !important;
+}
+
+body.dark-theme .mat-mdc-icon-button[disabled] .mat-mdc-paginator-icon {
+    fill: #fff;
+}
+
 body.dark-theme .table-responsive .table td,
 body.dark-theme .table-responsive .table th {
     background-color: #312934;
     color: #f3f3f3;
+}
+
+body.dark-theme .mdc-notched-outline__leading, 
+body.dark-theme .mdc-notched-outline__notch, 
+body.dark-theme .mdc-notched-outline__trailing {
+    color: #f3f3f3;
+    border-color: #fff;
+}
+
+body.dark-theme .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline__leading, 
+body.dark-theme .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline__notch, 
+body.dark-theme .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline__trailing {
+    border-color: #fff;
+    color: #f3f3f3;
+}
+
+body.dark-theme .mat-mdc-select-arrow svg,
+body.dark-theme .mat-mdc-select-trigger {
+    color: #fff;
+}
+body.dark-theme button.btn-border.color-p {
+    background: transparent;
 }
 
 @media (max-width: 37.5em) {
@@ -2473,6 +2534,11 @@ body.dark-theme .trending-cards {
     margin-left: 1.25rem;
 }
 
+body.dark-theme .trending-cards.layout1{
+    display: block;
+    margin: 0;
+}
+
 body.dark-theme .trending-cards li .big-pic {
     border-radius: 10px;
 }
@@ -2523,6 +2589,10 @@ body.dark-theme .trending-cards .trending-price {
     border: 5px solid #312934;
 }
 
+body.dark-theme .trending-cards.layout1 .trending-price {
+    top: 0;
+}
+
 @media (max-width: 64em) {
     body.dark-theme .trending-cards {
         grid-template-columns: repeat(2, 1fr);
@@ -2544,11 +2614,11 @@ body.dark-theme .trending-cards .trending-price {
     }
 }
 
-body.dark-theme .top-creators {
+body.dark-theme .selling-products {
     margin: 2rem 0 0;
 }
 
-body.dark-theme .top-creators .white-box {
+body.dark-theme .selling-products .white-box {
     padding: 20px;
 }
 

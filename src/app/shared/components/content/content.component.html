@@ -1,166 +1,71 @@
 <div class="content nft-custom-scroll">
     <div class="content-left">
         <section class="trending">
-            <h2>TRENDING NFT's</h2>
-            <ul class="trending-cards">
-                <li class="white-box">
+            <h2>TRENDING PRODUCT's</h2>
+            <div class="trending-cards">
+                <div *ngFor="let nft of listProducts" class="white-box">
                     <a href="javascript:;">
-                        <img
-                            src="https://public.nftstatic.com/static/nft/zipped/c809cf503539448aa4fac1e3ab2c7273_zipped.jpeg"
-                            alt class="big-pic">
-                        <div class="trending-card-bottom">
-                            <figure>
-                                <img
-                                    src="https://public.nftstatic.com/static/nft/zipped/957dbf92692c41a9a69ce85584d56db2_zipped.jpeg"
-                                    alt>
-                            </figure>
-                            <div class="text ml-8">
-                                <div class="text-500 text-black">DAY Z
-                                    #058</div>
-                                <div
-                                    class="text-12 text-dark-gray">SquareeAgency</div>
+                        <img [src]="nft.image" alt="{{ nft.title }} Image"
+                            class="big-pic">
+                        <div>
+                            <div class="trending-card-bottom">
+                                <div class="text ml-8">
+                                    <div class="text-500 text-black">{{
+                                        nft.title }}</div>
+                                    <div
+                                        class="text-12 text-dark-gray">{{
+                                        nft.artist }}</div>
+                                </div>
+                            </div>
+                            <div class="trending-price">
+                                <svg width="24" height="24"
+                                    viewBox="0 0 12 12" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M6 0.875L2.875 6.125L6 8L9.125 6.125L6 0.875ZM2.875 6.75L6 11.125L9.125 6.75L6 8.625L2.875 6.75Z"
+                                        fill="white" />
+                                </svg>
+                                <div class="text-24 font-number">Price: {{
+                                    nft.price.value }}<span
+                                        class="ml-4">{{
+                                        nft.price.currency }}</span></div>
                             </div>
                         </div>
-                        <div class="trending-price">
-                            <svg width="24" height="24"
-                                viewBox="0 0 12 12" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M6 0.875L2.875 6.125L6 8L9.125 6.125L6 0.875ZM2.875 6.75L6 11.125L9.125 6.75L6 8.625L2.875 6.75Z"
-                                    fill="white" />
-                            </svg>
-                            <div class="text-24 font-number">1.25</div>
-
-                            <span class="text-10 ml-4">ETH</span>
-                        </div>
                     </a>
-                </li>
-                <li class="white-box">
-                    <a href="javascript:;">
-                        <img
-                            src="https://public.nftstatic.com/static/nft/zipped/0698e13c9c5c48dbb81a910bf9fae4ab_zipped.png"
-                            alt class="big-pic">
-                        <div class="trending-card-bottom">
-                            <figure>
-                                <img
-                                    src="https://public.nftstatic.com/static/nft/zipped/957dbf92692c41a9a69ce85584d56db2_zipped.jpeg"
-                                    alt>
-                            </figure>
-                            <div class="text ml-8">
-                                <div class="text-500 text-black">DAY Z
-                                    #057</div>
-                                <div
-                                    class="text-12 text-dark-gray">KKKSpecial</div>
-                            </div>
-                        </div>
-                        <div class="trending-price">
-                            <svg width="24" height="24"
-                                viewBox="0 0 12 12" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M6 0.875L2.875 6.125L6 8L9.125 6.125L6 0.875ZM2.875 6.75L6 11.125L9.125 6.75L6 8.625L2.875 6.75Z"
-                                    fill="white" />
-                            </svg>
-                            <div class="text-24 font-number">0.75</div>
-
-                            <span class="text-10 ml-4">ETH</span>
-                        </div>
-                    </a>
-                </li>
-                <li class="white-box">
-                    <a href="javascript:;">
-                        <img
-                            src="https://public.nftstatic.com/static/nft/zipped/dbbd137f42394dce880adb5a150bfbd7_zipped.jpeg"
-                            alt class="big-pic">
-                        <div class="trending-card-bottom">
-                            <figure>
-                                <img
-                                    src="https://public.nftstatic.com/static/nft/zipped/957dbf92692c41a9a69ce85584d56db2_zipped.jpeg"
-                                    alt>
-                            </figure>
-                            <div class="text ml-8">
-                                <div class="text-500 text-black">DAY Z
-                                    #062</div>
-                                <div
-                                    class="text-12 text-dark-gray">Topometa3DD</div>
-                            </div>
-                        </div>
-                        <div class="trending-price">
-                            <svg width="24" height="24"
-                                viewBox="0 0 12 12" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M6 0.875L2.875 6.125L6 8L9.125 6.125L6 0.875ZM2.875 6.75L6 11.125L9.125 6.75L6 8.625L2.875 6.75Z"
-                                    fill="white" />
-                            </svg>
-                            <div class="text-24 font-number">2.5</div>
-
-                            <span class="text-10 ml-4">ETH</span>
-                        </div>
-                    </a>
-                </li>
-            </ul>
+                </div>
+            </div>
         </section>
-        <section class="top-creators">
+        <section class="selling-products">
             <div class="white-box">
                 <div class="d-flex align-center justify-space mb-16">
-                    <h2 class="bold text-color-p mb-0">TOP CREATORS</h2>
-                    <a href="jabascript:;" class="text-14 bold">view
-                        all</a>
+                    <h2 class="bold text-color-p mb-0">Selling products</h2>
+                    <a href="jabascript:;" class="text-14 bold">View all</a>
                 </div>
 
                 <div class="table-responsive nft-custom-scroll">
                     <table class="table">
                         <thead>
                             <tr>
-                                <th>Creator</th>
-                                <th>Volume (USD)</th>
-                                <th>Sales</th>
-                                <th class="text-right">Items</th>
+                                <th>Products Name</th>
+                                <th class="text-center">Price ($)</th>
+                                <th class="text-center">Price Sale ($)</th>
+                                <th class="text-right">Qty</th>
+                                <th class="text-right">View</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td><span
-                                        class="font-number mr-4">1)</span>
-                                    Mytheria </td>
-                                <td class="font-number">$
-                                    15,016,785.61</td>
-                                <td class="font-number">4,443</td>
-                                <td
-                                    class="text-right font-number">3,000</td>
+                            <tr *ngFor="let product of sellingProducts">
+                                <td><span class="font-number mr-4">{{
+                                        product.id}})</span>{{ product.name
+                                    }}</td>
+                                <td class="font-number text-center">{{
+                                    product.price }}</td>
+                                <td class="font-number text-center">{{
+                                    product.sales }}</td>
+                                <td class="text-right font-number">{{product.qty
+                                    }}</td>
+                                <td class="text-right mr-4">View products</td>
                             </tr>
-                            <tr>
-                                <td><span
-                                        class="font-number mr-4">2)</span>
-                                    Gamestarter </td>
-                                <td class="font-number">$
-                                    12,315,165.18</td>
-                                <td class="font-number">8,937</td>
-                                <td
-                                    class="text-right font-number">5,500</td>
-                            </tr>
-                            <tr>
-                                <td><span
-                                        class="font-number mr-4">3)</span>
-                                    DeRace</td>
-                                <td class="font-number">$
-                                    10,094,074.09</td>
-                                <td class="font-number">4,188</td>
-                                <td
-                                    class="text-right font-number">1,987</td>
-                            </tr>
-                            <tr>
-                                <td><span
-                                        class="font-number mr-4">4)</span>
-                                    NFT_PRIDE </td>
-                                <td class="font-number">$
-                                    8,278,394.22</td>
-                                <td class="font-number">93,238</td>
-                                <td
-                                    class="text-right font-number">37,020</td>
-                            </tr>
-
                         </tbody>
                     </table>
                 </div>
@@ -170,35 +75,92 @@
 
     <div class="content-right">
         <div class="balance white-box mb-24 text-center">
-            <div class="text-1 mb-8 ls-2">BALANCE</div>
-            <div class="text-32 bold text-color-p font-number">
-                1,023,789
-
+            <h3 class="bold text-color-p mb-0">Expensive Products</h3>
+            <div class="trending-cards layout1">
+                <owl-carousel-o [options]="customOptions">
+                    <ng-container *ngFor="let nft of expensiveProducts"
+                        class="box">
+                        <ng-template carouselSlide>
+                            <div class="carou-item">
+                                <img [src]="nft.image"
+                                    alt="{{ nft.title }} Image"
+                                    class="big-pic">
+                                <div>
+                                    <div class="trending-card-bottom">
+                                        <div class="text">
+                                            <div
+                                                class="text-500 text-black">{{nft.title
+                                                }}</div>
+                                            <div
+                                                class="text-12 text-dark-gray">{{nft.artist
+                                                }}</div>
+                                        </div>
+                                    </div>
+                                    <div class="trending-price">
+                                        <svg width="24" height="24"
+                                            viewBox="0 0 12 12" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M6 0.875L2.875 6.125L6 8L9.125 6.125L6 0.875ZM2.875 6.75L6 11.125L9.125 6.75L6 8.625L2.875 6.75Z"
+                                                fill="white" />
+                                        </svg>
+                                        <div class="text-24 font-number">Price:
+                                            {{
+                                            nft.price.value }}<span
+                                                class="ml-4">{{
+                                                nft.price.currency
+                                                }}</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </ng-template>
+                    </ng-container>
+                </owl-carousel-o>
             </div>
-            <div class="mt-32 mb-24">
-                <svg class="m-auto" width="151" height="144"
-                    viewBox="0 0 151 144" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M2.67026 143.865L2.64939 137.446C2.62851 131.028 2.58676 118.191 5.5615 114.27C8.53624 110.348 14.5275 115.342 20.0125 118.84C25.4975 122.338 30.4762 124.34 33.0058 119.103C35.5354 113.866 35.6158 101.39 38.0798 95.9589C40.5438 90.5279 45.3913 92.1417 49.9758 92.9779C54.5602 93.8141 58.8815 93.8727 64.0498 96.4343C69.218 98.9959 75.2331 104.061 77.8817 99.1753C80.5303 94.29 79.8125 79.4549 81.9393 73.0274C84.0661 66.5999 89.0376 68.5799 92.9747 67.5028C96.9117 66.4257 99.8145 62.2915 101.346 54.1032C102.877 45.9149 103.036 33.6724 105.679 28.7706C108.322 23.8688 113.449 26.3076 117.731 26.2498C122.013 26.1921 125.45 23.6379 129.283 22.2541C133.117 20.8702 137.346 20.6568 140.524 17.3359C143.702 14.015 145.828 7.58662 146.891 4.37242L147.955 1.15821"
-                        stroke="#A4308A" stroke-width="5" />
-                </svg>
-
-            </div>
-
-            <a href="javascript:;" class="btn-border color-p small">view
-                all</a>
         </div>
-        <div class="nft-of-the-day white-box text-center">
-            <a href="javascript:;">
-                <img
-                    src="https://public.nftstatic.com/static/nft/zipped/9003e24c71bc421189a764fed8041cb3_zipped.jpeg"
-                    alt>
-
-                <div class="text-13 bold mt-8 text-color-p">NFT of the
-                    day</div>
-                <div class="text-14 text-black">DAY Z #057 (4x5)</div>
-            </a>
+        <div class="balance white-box mb-24 text-center">
+            <h3 class="bold text-d0011b-p mb-0">Sale Off</h3>
+            <div class="trending-cards layout1">
+                <owl-carousel-o [options]="customOptions">
+                    <ng-container *ngFor="let nft of expensiveProducts"
+                        class="box">
+                        <ng-template carouselSlide>
+                            <div class="carou-item">
+                                <img [src]="nft.image"
+                                    alt="{{ nft.title }} Image"
+                                    class="big-pic">
+                                <div>
+                                    <div class="trending-card-bottom">
+                                        <div class="text">
+                                            <div
+                                                class="text-500 text-black">{{nft.title
+                                                }}</div>
+                                            <div
+                                                class="text-12 text-dark-gray">{{nft.artist
+                                                }}</div>
+                                        </div>
+                                    </div>
+                                    <div class="trending-price sale">
+                                        <svg width="24" height="24"
+                                            viewBox="0 0 12 12" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M6 0.875L2.875 6.125L6 8L9.125 6.125L6 0.875ZM2.875 6.75L6 11.125L9.125 6.75L6 8.625L2.875 6.75Z"
+                                                fill="white" />
+                                        </svg>
+                                        <div class="text-20 font-number">Price:
+                                            {{
+                                            nft.price.value }}<span
+                                                class="ml-4">{{
+                                                nft.price.currency
+                                                }}</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </ng-template>
+                    </ng-container>
+                </owl-carousel-o>
+            </div>
         </div>
     </div>
 </div>

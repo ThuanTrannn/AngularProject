@@ -53,6 +53,4 @@ export class UpdatepopupComponent implements OnInit {
       this.dialogref.close();
     });
   }
-  
-
 }
