@@ -2053,6 +2053,10 @@ header .new-notif {
     background-color: #d0011b;
 }
 
+.sale.td {
+    color: #d0011b !important;
+}
+
 .trending-cards .trending-price {
     background-color: #7f30a4;
     color: #fff;
@@ -2219,6 +2223,16 @@ header .new-notif {
 
 body.dark-theme {
     background-color: #312934;
+}
+
+body.dark-theme .logo1,
+.logo2 {
+    display: none;
+}
+
+.logo1,
+body.dark-theme .logo2 {
+    display: block;
 }
 
 body.dark-theme .container {
