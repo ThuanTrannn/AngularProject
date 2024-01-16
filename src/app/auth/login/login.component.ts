@@ -54,4 +54,8 @@ export class LoginComponent {
       this.toastr.warning('Please enter valid data.');
     }
   }
+  proceedLoginAndClosePopup() {
+    this.proceedLogin();
+    this.router.navigate(['/register']);
+  }
 }
