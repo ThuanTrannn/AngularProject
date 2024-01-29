@@ -20,6 +20,7 @@ import { ProductTypeComponent } from './shared/components/products/product-type/
 import { SidebarComponent } from './shared/components/sidebar/sidebar.component';
 import { ContentComponent } from './shared/components/content/content.component';
 import { HomepagesComponent } from './shared/components/homepages/homepages.component';
+import { ProductsDetailsComponent } from './shared/components/products-details/products-details.component';
 
 
 @NgModule({
@@ -36,6 +37,7 @@ import { HomepagesComponent } from './shared/components/homepages/homepages.comp
     SidebarComponent,
     ContentComponent,
     HomepagesComponent,
+    ProductsDetailsComponent,
   ],
   imports: [
     BrowserModule,

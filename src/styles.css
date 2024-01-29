@@ -2073,6 +2073,21 @@ header .new-notif {
     border: 5px solid #fff;
 }
 
+.addtocart {
+    background-color: #7f30a4;
+    color: #fff;
+    padding: 13px 16px;
+    border-radius: 40px;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    border: none;
+    min-width: 240px;
+    text-align: center;
+    justify-content: center;
+}
+
 .trending-cards.layout1 .trending-price {
     top: 0;
 }

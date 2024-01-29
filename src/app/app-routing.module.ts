@@ -6,13 +6,14 @@ import { RegisterComponent } from './auth/register/register.component';
 import { ListuserComponent } from './auth/listuser/listuser.component';
 import { CustomerComponent } from './auth/customer/customer.component'; 
 import { HomepagesComponent } from './shared/components/homepages/homepages.component'; 
-
+import { ProductsDetailsComponent } from './shared/components/products-details/products-details.component'; 
 const routes: Routes = [
   {component: HomepagesComponent, path: ''},
   {component: LoginComponent, path: 'login'},
   {component: RegisterComponent, path: 'register'},
   {component: ListuserComponent,path:'user',canActivate:[AuthGuard]},
   {component: CustomerComponent,path:'customer',canActivate:[AuthGuard]},
+  {component: ProductsDetailsComponent, path: 'products/:id'},
 ];
 
 @NgModule({
