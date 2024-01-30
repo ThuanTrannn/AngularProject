@@ -59,10 +59,13 @@
                                     <span class="font-number mr-4">
                                         {{product.id}})
                                     </span>
-                                    {{ product.name}}
+                                    {{ product.title}}
                                 </td>
                                 <td class="font-number text-center">
-                                    {{product.price }}
+                                    <span class="ml-4">
+                                        {{product.price.currency }}
+                                    </span>
+                                    {{product.price.value }}
                                 </td>
                                 <td class="font-number text-center sale td">
                                     {{ product.sales }}

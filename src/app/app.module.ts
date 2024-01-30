@@ -21,6 +21,8 @@ import { SidebarComponent } from './shared/components/sidebar/sidebar.component'
 import { ContentComponent } from './shared/components/content/content.component';
 import { HomepagesComponent } from './shared/components/homepages/homepages.component';
 import { ProductsDetailsComponent } from './shared/components/products-details/products-details.component';
+import { AllproductsComponent } from './shared/components/allproducts/allproducts.component';
+import { CartComponent } from './shared/components/cart/cart.component';
 
 
 @NgModule({
@@ -38,6 +40,8 @@ import { ProductsDetailsComponent } from './shared/components/products-details/p
     ContentComponent,
     HomepagesComponent,
     ProductsDetailsComponent,
+    AllproductsComponent,
+    CartComponent,
   ],
   imports: [
     BrowserModule,

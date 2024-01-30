@@ -19,7 +19,7 @@
       "email": "admin2@gmail.com",
       "gender": "male",
       "role": "user",
-      "isactive": false
+      "isactive": true
     }
   ],
   "role": [
@@ -104,7 +104,7 @@
   ],
   "products": [
     {
-      "id":"10",
+      "id": "10",
       "image": "https://i.seadn.io/s/raw/files/01949bab8df2e7d4c6ef316241f99613.png?auto=format&dpr=1&w=384",
       "title": "NiftyNafty #1312",
       "artist": "SquareeAgency",
@@ -116,7 +116,7 @@
       }
     },
     {
-      "id":"11",
+      "id": "11",
       "image": "https://i.seadn.io/gae/gjAsfK0KNXyVEcy-8DAAy0p7kPY3vl6t7XsbcO3YEDriWg-VXNYHpMSCIUtfTunkaUjZlqDwPc8sJbrQOPc2BNiotr7b4roHeOhMGQ?auto=format&dpr=1&w=384",
       "title": "NiftyNafty #1325",
       "artist": "KKKSpecial",
@@ -128,7 +128,7 @@
       }
     },
     {
-      "id":"12",
+      "id": "12",
       "image": "https://i.seadn.io/gae/TspxJP2dL0njKtkOkgNqSFGfQYfGtDtUhaN25p9ZqhXbctzj4KD8nKx30lcoroJ8ZFxFhgnHINQZ2Go3BpJFQNzFamkWLdfaCO2N3A?auto=format&dpr=1&w=384",
       "title": "NiftyNafty #1400",
       "artist": "Topometa3DD",
@@ -140,7 +140,7 @@
       }
     },
     {
-      "id":"13",
+      "id": "13",
       "image": "https://i.seadn.io/gae/Q9fxQc4shTIPGOqvqqZ-swzNWDDghYFBko2SbcIKUfn9arQ0gCpQAty8Y0m9Wpc4MOI3L3Xy9_msrIJSMBU91vcgwpHbvfKGrJ6g?auto=format&dpr=1&w=384",
       "title": "NiftyNafty #1325",
       "artist": "KKKSpecial",
@@ -152,7 +152,7 @@
       }
     },
     {
-      "id":"14",
+      "id": "14",
       "image": "https://i.seadn.io/gae/eKSxA4TbkK113M_ZxhRbYYWrCchaSOR7WxDCbPqkr_fiPwxbxnMPEno6omanBZnSw4IemrKQqt_XUlV-M7zPPvOJqVTI9MfR9OVSvw?auto=format&dpr=1&w=384",
       "title": "NiftyNafty #1325",
       "artist": "KKKSpecial",
@@ -164,7 +164,7 @@
       }
     },
     {
-      "id":"15",
+      "id": "15",
       "image": "https://i.seadn.io/gae/FnZoDWk8djgXmtVZYYZIjxqvqKOLifiWTA7FmPrcmcdrJJQzNTEpwcnNGMghw64CDVjaKin2V8d500M9Blrek32HkhjPztocdcSupw?auto=format&dpr=1&w=384",
       "title": "NiftyNafty #1325",
       "artist": "KKKSpecial",
@@ -176,7 +176,7 @@
       }
     },
     {
-      "id":"16",
+      "id": "16",
       "image": "https://i.seadn.io/gae/PmnbJjtQp1BG35AzFu6Lss0vuAUiGTSIkOli5AEl-GQl53QdFuShhXN1BvkSUtmDcYSpfdbJHRw_n96CKzw7sUsdrxSRejwb3T-N?auto=format&dpr=1&w=384",
       "title": "NiftyNafty #1325",
       "artist": "KKKSpecial",
@@ -188,7 +188,7 @@
       }
     },
     {
-      "id":"17",
+      "id": "17",
       "image": "https://i.seadn.io/gae/SsNP_lbc4IGFFGQnIH_nNpVjbgynnrT806VcpH-XGFKs2YBAojl0JCqhPldPz6m7KLP6aUdK83O-XlqNhe7iMise90u8Sgrsse7G1w?auto=format&dpr=1&w=384",
       "title": "NiftyNafty #1325",
       "artist": "KKKSpecial",
@@ -200,38 +200,77 @@
       }
     },
     {
-      "id": 1,
-      "name": "NiftyNafty #1312",
-      "price": "$19.88",
+      "id": "18",
+      "image": "https://i.seadn.io/gae/SsNP_lbc4IGFFGQnIH_nNpVjbgynnrT806VcpH-XGFKs2YBAojl0JCqhPldPz6m7KLP6aUdK83O-XlqNhe7iMise90u8Sgrsse7G1w?auto=format&dpr=1&w=384",
+      "title": "NiftyNafty #1325",
+      "artist": "KKKSpecial",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+      "price": {
+        "value": 25.99,
+        "currency": "$"
+      },
       "sales": "$15.88",
       "qty": 3000,
       "category": "selling-products"
     },
     {
-      "id": 2,
-      "name": "NiftyNafty #1315",
-      "price": "$25.00",
-      "sales": "$18.88",
-      "qty": 5500,
+      "id": "19",
+      "image": "https://i.seadn.io/gae/SsNP_lbc4IGFFGQnIH_nNpVjbgynnrT806VcpH-XGFKs2YBAojl0JCqhPldPz6m7KLP6aUdK83O-XlqNhe7iMise90u8Sgrsse7G1w?auto=format&dpr=1&w=384",
+      "title": "NiftyNafty #1325",
+      "artist": "KKKSpecial",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+      "price": {
+        "value": 25.99,
+        "currency": "$"
+      },
+      "sales": "$15.88",
+      "qty": 3000,
       "category": "selling-products"
     },
     {
-      "id": 3,
-      "name": "NiftyNafty #1325",
-      "price": "$26.88",
-      "sales": "$16.55",
-      "qty": 1987,
+      "id": "20",
+      "image": "https://i.seadn.io/gae/SsNP_lbc4IGFFGQnIH_nNpVjbgynnrT806VcpH-XGFKs2YBAojl0JCqhPldPz6m7KLP6aUdK83O-XlqNhe7iMise90u8Sgrsse7G1w?auto=format&dpr=1&w=384",
+      "title": "NiftyNafty #1325",
+      "artist": "KKKSpecial",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+      "price": {
+        "value": 25.99,
+        "currency": "$"
+      },
+      "sales": "$15.88",
+      "qty": 3000,
       "category": "selling-products"
     },
     {
-      "id": 4,
-      "name": "NiftyNafty #1318",
-      "price": "$26.88",
-      "sales": "$19.99",
-      "qty": 37020,
+      "id": "21",
+      "image": "https://i.seadn.io/gae/SsNP_lbc4IGFFGQnIH_nNpVjbgynnrT806VcpH-XGFKs2YBAojl0JCqhPldPz6m7KLP6aUdK83O-XlqNhe7iMise90u8Sgrsse7G1w?auto=format&dpr=1&w=384",
+      "title": "NiftyNafty #1325",
+      "artist": "KKKSpecial",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+      "price": {
+        "value": 25.99,
+        "currency": "$"
+      },
+      "sales": "$15.88",
+      "qty": 3000,
       "category": "selling-products"
     },
     {
+      "id": "22",
+      "image": "https://i.seadn.io/gae/SsNP_lbc4IGFFGQnIH_nNpVjbgynnrT806VcpH-XGFKs2YBAojl0JCqhPldPz6m7KLP6aUdK83O-XlqNhe7iMise90u8Sgrsse7G1w?auto=format&dpr=1&w=384",
+      "title": "NiftyNafty #1325",
+      "artist": "KKKSpecial",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+      "price": {
+        "value": 25.99,
+        "currency": "$"
+      },
+      "sales": "$15.88",
+      "qty": 3000,
+      "category": "selling-products"
+    },
+    {
+      "id": "23",
       "image": "https://i.seadn.io/gae/Q9fxQc4shTIPGOqvqqZ-swzNWDDghYFBko2SbcIKUfn9arQ0gCpQAty8Y0m9Wpc4MOI3L3Xy9_msrIJSMBU91vcgwpHbvfKGrJ6g?auto=format&dpr=1&w=384",
       "title": "NiftyNafty #1325",
       "artist": "KKKSpecial",
@@ -242,6 +281,7 @@
       }
     },
     {
+      "id": "24",
       "image": "https://i.seadn.io/gae/eKSxA4TbkK113M_ZxhRbYYWrCchaSOR7WxDCbPqkr_fiPwxbxnMPEno6omanBZnSw4IemrKQqt_XUlV-M7zPPvOJqVTI9MfR9OVSvw?auto=format&dpr=1&w=384",
       "title": "NiftyNafty #1325",
       "artist": "KKKSpecial",
@@ -252,6 +292,7 @@
       }
     },
     {
+      "id": "25",
       "image": "https://i.seadn.io/gae/FnZoDWk8djgXmtVZYYZIjxqvqKOLifiWTA7FmPrcmcdrJJQzNTEpwcnNGMghw64CDVjaKin2V8d500M9Blrek32HkhjPztocdcSupw?auto=format&dpr=1&w=384",
       "title": "NiftyNafty #1325",
       "artist": "KKKSpecial",
@@ -262,6 +303,7 @@
       }
     },
     {
+      "id": "26",
       "image": "https://i.seadn.io/gae/PmnbJjtQp1BG35AzFu6Lss0vuAUiGTSIkOli5AEl-GQl53QdFuShhXN1BvkSUtmDcYSpfdbJHRw_n96CKzw7sUsdrxSRejwb3T-N?auto=format&dpr=1&w=384",
       "title": "NiftyNafty #1325",
       "artist": "KKKSpecial",
@@ -272,6 +314,7 @@
       }
     },
     {
+      "id": "27",
       "image": "https://i.seadn.io/gae/SsNP_lbc4IGFFGQnIH_nNpVjbgynnrT806VcpH-XGFKs2YBAojl0JCqhPldPz6m7KLP6aUdK83O-XlqNhe7iMise90u8Sgrsse7G1w?auto=format&dpr=1&w=384",
       "title": "NiftyNafty #1325",
       "artist": "KKKSpecial",
@@ -282,31 +325,6 @@
       }
     }
   ],
-  "categories": [
-    {
-      "id": 1,
-      "categoryName": "Mobile Phones",
-      "numberOfProducts": 190
-    },
-    {
-      "id": 2,
-      "categoryName": "Laptops",
-      "numberOfProducts": 178
-    },
-    {
-      "id": 3,
-      "categoryName": "Wrist Watches",
-      "numberOfProducts": 143
-    },
-    {
-      "id": 4,
-      "categoryName": "Appliances",
-      "numberOfProducts": 781
-    },
-    {
-      "id": 5,
-      "categoryName": "Electronics",
-      "numberOfProducts": 351
-    }
-  ]
+  "donhang": [],
+  "donhangchitiet": []
 }

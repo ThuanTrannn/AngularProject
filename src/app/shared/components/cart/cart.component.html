@@ -1,0 +1,20 @@
+<!-- cart.compoment.html -->
+<div class="alert alert-warning text-center p-5 h2" *ngIf="cartItems.length==0">
+    Bạn chưa chọn sản phẩm nào
+</div>
+
+<div id="cart" class="table table-bordered" *ngIf="cartItems.length>0">
+    <h2>Giỏ hàng của bạn</h2>
+    <div *ngFor="let cartItem of cartItems" class="white-box">
+        <div class="details-images w-30">
+            <img src="{{ cartItem.product.image }}"
+                alt="{{ cartItem.product.title }}">
+        </div>
+        <div class="cartContent">
+            <div class="">
+                <h3 class="title">{{ cartItem.product.title }}</h3>
+            </div>
+        </div>
+    </div>
+</div>
+

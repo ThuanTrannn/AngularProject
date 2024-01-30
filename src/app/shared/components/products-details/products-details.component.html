@@ -1,4 +1,3 @@
-
 <div *ngIf="productsDetails">
     <div class="pb-10 pt-10 breadcrumbs">
         <a routerLink="/home" class="text-16 font-number">Home</a> /
@@ -17,7 +16,7 @@
                     productsDetails.price.currency }}</p>
             </div>
             <div class="addTo">
-                <button class="addtocart">Add To Cart</button>
+                <button class="addtocart" (click)="addToCart(productsDetails)">Add To Cart</button>
             </div>
         </div>
     </div>

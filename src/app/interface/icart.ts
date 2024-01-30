@@ -1,4 +1,5 @@
-export interface IProducts {
+// products.interface.ts
+export interface Product {
     id?: number;
     artist?:string;
     title?: string;
@@ -10,5 +11,10 @@ export interface IProducts {
     image?: string;
     date?: string;
     category?: string;
-    qty?: number;
+}
+
+// cart-item.interface.ts
+export interface CartItem {
+    product: Product;
+    quantity: number;
 }

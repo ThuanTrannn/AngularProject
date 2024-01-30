@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
 import { IProducts } from '../../../interface/products';
-
+import { CartService } from '../../../service/cart.service';
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-products-details',
   templateUrl: './products-details.component.html',
@@ -21,19 +22,25 @@ export class ProductsDetailsComponent implements OnInit {
     date: "", 
     category: ""
   };
-  idSP: number = 0;
+  idProducts: number = 0;
+  listProduct: IProducts[] = [];
   constructor(
     private _http: HttpClient,
     private route: ActivatedRoute,
+    private cartService: CartService,
+    private toastr: ToastrService,
   ) {}
 
-  ngOnInit(): void {
-    this.idSP = Number(this.route.snapshot.params['id']);
+  addToCart(product: IProducts) {
+    this.cartService.addToCart(product);
+    this.toastr.success('Add to cart Success')
+  }
 
-    this._http.get<IProducts[]>(`http://localhost:3000/products?id=${this.idSP}`).subscribe(data => {
+  ngOnInit(): void {
+    this.idProducts = Number(this.route.snapshot.params['id']);
+    this._http.get<IProducts[]>(`http://localhost:3000/products?id=${this.idProducts}`).subscribe(data => {
       if (data && data.length > 0) {
         this.productsDetails = data[0];
-        console.log(this.productsDetails);
       }
     });
   }

@@ -1852,6 +1852,10 @@ header {
     margin-bottom: 1rem;
 }
 
+.flex-col {
+    flex-direction: column;
+}
+
 header .search-bar {
     width: calc(100% - 80px - 3rem);
     position: relative;
@@ -2006,6 +2010,10 @@ header .new-notif {
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 1.5rem;
     margin-left: 1.25rem;
+}
+
+.trending-cards.not-mar {
+    margin: 0;
 }
 
 .trending-cards.layout1 {
@@ -2768,4 +2776,40 @@ body.dark-theme .color-scheme .checkbox:checked+label .dark svg {
 
 body.dark-theme .color-scheme .checkbox:checked+label .ball {
     background-color: #7f30a4;
+}
+
+.pagination {
+    align-items: center;
+    justify-content: center;
+    padding: 16px 0;
+}
+
+.pagination button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #7f30a4;
+    border: none;
+    box-shadow: none;
+    color: #fff;
+    margin: 0 16px;
+}
+
+.pagination button svg  {
+    font-size: 16px;
+}
+
+.next-rote {
+    transform: rotate(180deg);
+}
+
+.categories ul {
+    justify-content: center;
+    align-items: center;
+    text-transform: capitalize;
+    margin: 0 0 20px;
+}
+
+.categories ul li {
+    padding: 0 16px;
 }

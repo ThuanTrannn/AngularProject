@@ -1,5 +1,6 @@
 
 export interface ListProducts {
+    id: number;
     image: string;
     title: string;
     artist: string;
