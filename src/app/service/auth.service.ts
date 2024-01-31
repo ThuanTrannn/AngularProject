@@ -1,13 +1,26 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, OnInit, Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
+import { Observable, of } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  constructor(@Inject(PLATFORM_ID) private platformId: Object, private http: HttpClient) { }
+  constructor(
+    @Inject(PLATFORM_ID) private platformId: Object,
+    private http: HttpClient
+  ) {}
 
   apiurl = 'http://localhost:3000/user';
+  getCurrentUser(): Observable<any> {
+    if (isPlatformBrowser(this.platformId)) {
+      const username = sessionStorage.getItem('username');
+      if (username) {
+        return of({ username });
+      }
+    }
+    return of(null);
+  }
 
   RegisterUser(inputdata: any) {
     return this.http.post(this.apiurl, inputdata)

@@ -3,18 +3,67 @@
     Bạn chưa chọn sản phẩm nào
 </div>
 
-<div id="cart" class="table table-bordered" *ngIf="cartItems.length>0">
+<div id="cart" *ngIf="cartItems.length>0">
     <h2>Giỏ hàng của bạn</h2>
-    <div *ngFor="let cartItem of cartItems" class="white-box">
-        <div class="details-images w-30">
-            <img src="{{ cartItem.product.image }}"
-                alt="{{ cartItem.product.title }}">
-        </div>
-        <div class="cartContent">
-            <div class="">
-                <h3 class="title">{{ cartItem.product.title }}</h3>
-            </div>
-        </div>
+    <table class="table table-bordered cart_table mb-0">
+        <thead class="thead_cart">
+            <th class="cart_heading">Name</th>
+            <th class="cart_heading">Price</th>
+            <th class="cart_heading">Qty</th>
+            <th class="cart_heading">Price later</th>
+            <th class="cart_heading"></th>
+        </thead>
+        <tbody>
+            <tr class="product-item" *ngFor="let item of cartItems">
+                <td class="product_name">
+                    <img [src]="item.product.image" width="90"
+                        alt="{{ item.product.title }}">
+                    <span>{{ item.product.title }}</span>
+                </td>
+                <td>
+                    <p>
+                        {{ item.product.price?.currency}}{{item.product.price?.value }}
+                    </p>
+                </td>
+                <td>
+                    <p>{{ item.quantity }}</p>
+                </td>
+                <td>
+                    <p *ngIf="item.product && item.product.price">
+                        {{item.product.price.currency }}{{getTotalItemPrice(item)}}
+                    </p>
+                </td>
+                <td>
+                    <button (click)="deleteCartItem(item.product.id)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="total">
+        <table class="table">
+            <tr>
+                <td>
+                    Total
+                </td>
+                <td>
+                    {{ totalPrice }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Quantity
+                </td>
+                <td>
+                    {{ getTotalQuantity() }}
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <a class="btn btn-sucess" routerLink="/checkout">Thanh Toán</a>
+                </td>
+            </tr>
+        </table>
     </div>
 </div>
-

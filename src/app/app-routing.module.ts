@@ -9,6 +9,8 @@ import { HomepagesComponent } from './shared/components/homepages/homepages.comp
 import { AllproductsComponent } from './shared/components/allproducts/allproducts.component'; 
 import { ProductsDetailsComponent } from './shared/components/products-details/products-details.component'; 
 import { CartComponent } from './shared/components/cart/cart.component'; 
+import { CheckoutComponent } from './shared/components/checkout/checkout.component';
+import { OrderSuccessComponent } from './shared/components/order-success/order-success.component';
 const routes: Routes = [
   {component: HomepagesComponent, path: ''},
   {component: LoginComponent, path: 'login'},
@@ -18,6 +20,8 @@ const routes: Routes = [
   {component: ProductsDetailsComponent, path: 'products/:id'},
   {component: AllproductsComponent, path: 'all-products'},
   {component: CartComponent, path: 'cart'},
+  {component: CheckoutComponent, path: 'checkout' , canActivate: [AuthGuard]},
+  {component: OrderSuccessComponent, path: 'order-success' },
 ];
 
 @NgModule({
