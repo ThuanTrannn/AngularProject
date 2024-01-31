@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { CartService } from '../../../service/cart.service';
 import { CartItem } from './../../../interface/icart';
 import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
+import { AuthService } from '../../../service/auth.service';
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
@@ -13,7 +15,9 @@ export class CartComponent {
   additionalPrice: number = 0;
   constructor(
     private cartService: CartService,
-    private toastr: ToastrService) { }
+    private toastr: ToastrService,
+    private authService: AuthService, 
+    private router: Router) { }
 
   ngOnInit() {
     this.loadCart();
@@ -22,7 +26,13 @@ export class CartComponent {
       this.calculateTotalPrice();
     });
   }
-
+  proceedToCheckout() {
+    if (this.authService.isLoggedIn()) {
+      this.router.navigate(['/checkout']); 
+    } else {
+      this.router.navigate(['/login']); 
+    }
+  }
   calculateTotalPrice(): void {
     this.totalPrice = this.cartItems.reduce((total, item) => {
       if (item.product && item.product.price && item.quantity) {
