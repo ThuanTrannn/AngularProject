@@ -25,7 +25,7 @@ export class ListuserComponent implements AfterViewInit {
   ngAfterViewInit(): void { }
 
   LoadUser() {
-    this.service.Getall().subscribe(res => {
+    this.service.getAll().subscribe(res => {
       this.userlist = res;
       this.dataSource = new MatTableDataSource(this.userlist);
       this.dataSource.paginator = this.paginator;
@@ -34,7 +34,7 @@ export class ListuserComponent implements AfterViewInit {
   }
   displayedColumns: string[] = ['username', 'name', 'email', 'status', 'role', 'action'];
 
-  updateuser(code: any) {
+  updateUser(code: any) {
     this.OpenDialog('600ms', '300ms', code);
   }
 

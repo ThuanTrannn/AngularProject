@@ -14,7 +14,7 @@ export class UpdatepopupComponent implements OnInit {
   constructor(private builder: FormBuilder, private service: AuthService, private toastr: ToastrService,
     private dialogref: MatDialogRef<UpdatepopupComponent>, @Inject(MAT_DIALOG_DATA) public data: any) {
 
-    this.service.getuserrole().subscribe(res => {
+    this.service.getUserRole().subscribe(res => {
       this.rolelist = res;
     });
   }
@@ -37,7 +37,7 @@ export class UpdatepopupComponent implements OnInit {
   });
 
   loaduserdata(code: any) {
-    this.service.GetUserbyCode(code).subscribe(res => {
+    this.service.getUserByCode(code).subscribe(res => {
       this.editdata = res;
       console.log(this.editdata);
       this.registerform.setValue({
@@ -47,8 +47,8 @@ export class UpdatepopupComponent implements OnInit {
       });
     });
   }
-  UpdateUser() {
-    this.service.updateuser(this.registerform.value.id, this.registerform.value).subscribe(res => {
+  updateUser() {
+    this.service.updateUser(this.registerform.value.id, this.registerform.value).subscribe(res => {
       this.toastr.success('Updated successfully.');
       this.dialogref.close();
     });

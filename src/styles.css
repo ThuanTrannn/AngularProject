@@ -1743,9 +1743,9 @@ body {
 .container {
     max-width: 1280px;
     padding: 0;
-    max-height: max-content;
+    max-height: 94vh;
     width: 100%;
-    height: max-content;
+    height: 94vh;
     background-color: #fff;
     backdrop-filter: blur(18px);
     border-radius: 40px;
@@ -1832,6 +1832,11 @@ main {
     border-radius: 40px;
     width: calc(100% - 180px);
     padding: 2rem;
+    overflow: auto;
+}
+
+main::-webkit-scrollbar {
+    width: 0;
 }
 
 @media (max-width: 48em) {
@@ -2812,4 +2817,9 @@ body.dark-theme .color-scheme .checkbox:checked+label .ball {
 
 .categories ul li {
     padding: 0 16px;
+}
+
+.form-control:focus {
+    border: none;
+    box-shadow: none;
 }

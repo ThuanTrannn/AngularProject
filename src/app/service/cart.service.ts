@@ -58,9 +58,9 @@ export class CartService {
         this.saveCart(cart);
     }
 
-    taoDonHang(hoten: string, diachi: string, dienthoai: string, email: string) {
-        return this.http.post("http://localhost:3000/donhang",
-            { hoten: hoten, diachi: diachi, dienthoai: dienthoai, email: email },
+    addOrder(name: string, address: string, phone: string, email: string) {
+        return this.http.post("http://localhost:3000/order",
+            { name: name, address: address, phone: phone, email: email },
             { observe: 'response' }
         )
     }

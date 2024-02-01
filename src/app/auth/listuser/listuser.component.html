@@ -33,8 +33,8 @@
         <ng-container matColumnDef="action">
           <th *matHeaderCellDef> Action </th>
           <td *matCellDef="let element">
-            <button *ngIf="element.role !=='admin'" (click)="updateuser(element.id)" class="btn-border color-p text-16">Update</button>
-            <button *ngIf="element.role !=='admin'" (click)="updateuser(element.id)" class="btn-border color-p text-16 ml-8">Delete</button>
+            <button *ngIf="element.role !=='admin'" (click)="updateUser(element.id)" class="btn-border color-p text-16">Update</button>
+            <button *ngIf="element.role !=='admin'" (click)="updateUser(element.id)" class="btn-border color-p text-16 ml-8">Delete</button>
           </td>
         </ng-container>
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

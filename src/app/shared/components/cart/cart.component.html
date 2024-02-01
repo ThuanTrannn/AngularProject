@@ -4,7 +4,7 @@
 </div>
 
 <div id="cart" *ngIf="cartItems.length>0">
-    <h2>Giỏ hàng của bạn</h2>
+    <div class="alert alert-success">GIỎ HÀNG CỦA BẠN</div>
     <table class="table table-bordered cart_table mb-0">
         <thead class="thead_cart">
             <th class="cart_heading">Name</th>
@@ -47,7 +47,7 @@
                     Total
                 </td>
                 <td>
-                    {{ totalPrice }}
+                    ${{ totalPrice }}
                 </td>
             </tr>
             <tr>
@@ -61,7 +61,7 @@
             <tr>
                 <td></td>
                 <td>
-                    <a class="btn btn-sucess" (click)="proceedToCheckout()">Thanh Toán</a>
+                    <button class="btn btn-primary cursor-pointer" (click)="proceedToCheckout()">Thanh Toán</button>
                 </td>
             </tr>
         </table>

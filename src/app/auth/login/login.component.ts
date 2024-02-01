@@ -35,7 +35,7 @@ export class LoginComponent {
   // Xử lý sự kiện khi người dùng nhấn nút đăng nhập.
   proceedLogin() {
     if (this.loginForm.valid) {
-      this.service.GetUserbyCode(this.loginForm.value.id).subscribe(item => {
+      this.service.getUserByCode(this.loginForm.value.id).subscribe(item => {
         this.result = item;
 
         if (this.result.password === this.loginForm.value.password) {

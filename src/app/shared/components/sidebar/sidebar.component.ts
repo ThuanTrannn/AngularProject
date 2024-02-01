@@ -12,8 +12,8 @@ export class SidebarComponent {
   isUserLoggedIn(): boolean {
     return this.authService.isLoggedIn();
   }
-  logout() {
-    this.authService.logout();
+  logOut() {
+    this.authService.logOut();
   }
   toggleTheme() {
     this.themeService.toggleTheme();
