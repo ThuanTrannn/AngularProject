@@ -24,6 +24,8 @@ import { CartComponent } from './shared/components/cart/cart.component';
 import { CheckoutComponent } from './shared/components/checkout/checkout.component';
 import { OrderSuccessComponent } from './shared/components/order-success/order-success.component';
 import { EditAccountComponent } from './auth/edit-account/edit-account.component';
+import { OrderDetailsComponent } from './shared/components/order-details/order-details.component';
+import { AccountDetailsComponent } from './auth/account-details/account-details.component';
 
 
 @NgModule({
@@ -45,6 +47,8 @@ import { EditAccountComponent } from './auth/edit-account/edit-account.component
     CheckoutComponent,
     OrderSuccessComponent,
     EditAccountComponent,
+    OrderDetailsComponent,
+    AccountDetailsComponent,
   ],
   imports: [
     BrowserModule,

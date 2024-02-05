@@ -55,4 +55,8 @@ export class ListuserComponent implements AfterViewInit {
   proceedEditAccount(userId: string) {
     this.router.navigate(['/edit-account', userId]); 
   }
+
+  viewOrder(userId: string) {
+    this.router.navigate(['/order-details'], { queryParams: { userId: userId } });
+  }
 }

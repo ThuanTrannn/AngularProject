@@ -4,6 +4,9 @@ import { IProducts } from '../interface/products';
 import { CartItem } from '../interface/icart';
 import { BehaviorSubject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { switchMap } from 'rxjs/operators';
+
 declare var localStorage: any;
 @Injectable({ providedIn: 'root' })
 export class CartService {
@@ -58,10 +61,46 @@ export class CartService {
         this.saveCart(cart);
     }
 
-    addOrder(name: string, address: string, phone: string, email: string) {
+    addOrder(userId: number, name: string, address: string, phone: string, email: string) {
         return this.http.post("http://localhost:3000/order",
-            { name: name, address: address, phone: phone, email: email },
+            { userId, name: name, address: address, phone: phone, email: email },
             { observe: 'response' }
         )
+    }
+
+    public getCartItems(): CartItem[] {
+        return this.cartItemsSubject.getValue();
+    }
+
+    getOrdersByUserId(userId: string): Observable<any[]> {
+        return this.http.get<any[]>(`http://localhost:3000/orderdetails?userId=${userId}`);
+    }
+
+    getOrdersForUser(userIdFromUrl: string): Observable<any[]> {
+        return this.getOrdersByUserId(userIdFromUrl);
+    }
+
+    orderDetails(userId: number, item: CartItem) {
+        return this.http.get<any[]>(`http://localhost:3000/orderdetails?userId=${userId}`).pipe(
+            switchMap((orderDetails: any[]) => {
+                const existingItem = orderDetails.find(detail => detail.idProducts === item.product.id);
+                if (existingItem) {
+                    // Tăng quantity nếu sản phẩm đã tồn tại trong đơn hàng chi tiết
+                    existingItem.quantity += item.quantity;
+                    // Update thông tin sản phẩm trong đơn hàng chi tiết trên server
+                    return this.http.put<any>(`http://localhost:3000/orderdetails/${existingItem.id}`, existingItem);
+                } else {
+                    // Thêm sản phẩm mới vào đơn hàng chi tiết nếu chưa tồn tại
+                    return this.http.post<any>("http://localhost:3000/orderdetails", {
+                        "userId": userId,
+                        "idProducts": item.product.id,
+                        "image": item.product.image,
+                        "title": item.product.title,
+                        "price": item.product.price,
+                        "quantity": item.quantity
+                    }, { observe: 'response' });
+                }
+            })
+        );
     }
 }

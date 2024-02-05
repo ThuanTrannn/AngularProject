@@ -1,0 +1,30 @@
+<!-- cart.compoment.html -->
+<div class="alert alert-warning text-center p-5 h2" *ngIf="orders && orders.length === 0">
+  You have not selected any orders yet
+</div>
+
+<div id="cart" *ngIf="orders && orders.length > 0">
+  <div class="alert alert-success">Your order</div>
+  <table class="table table-bordered cart_table mb-0">
+      <thead class="thead_cart">
+          <th class="cart_heading">Name</th>
+          <th class="cart_heading">Price</th>
+          <th class="cart_heading">Qty</th>
+      </thead>
+      <tbody>
+          <tr class="product-item" *ngFor="let order of orders">
+              <td class="product_name">
+                  <img [src]="order.image" width="90"
+                      alt="{{ order.image }}">
+                  <span>{{ order.title }}</span>
+              </td>
+              <td>
+                  <p>{{ order.price.value | currency: '$' }}</p>
+              </td>
+              <td>
+                <p>{{ order.quantity }}</p>
+              </td>
+          </tr>
+      </tbody>
+  </table>
+</div>

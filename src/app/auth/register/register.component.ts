@@ -25,17 +25,32 @@ export class RegisterComponent {
     password: this.builder.control('', Validators.compose([Validators.required, Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}')])),
     email: this.builder.control('', Validators.compose([Validators.required, Validators.email])),
     role: this.builder.control(''),
-    isactive: this.builder.control(false)
+    isactive: this.builder.control(false),
+    phone: this.builder.control('', Validators.required),
+    address: this.builder.control('', Validators.required),
   });
 
   proceedregister() {
     if (this.registerForm.valid) {
-      this.service.registerUser(this.registerForm.value).subscribe(result => {
-        this.toastr.success('Please contact admin for enable access.', 'Registered successfully')
-        this.router.navigate(['login'])
-      });
+      // Kiểm tra nếu người dùng đã đăng nhập
+      if (this.isLoggedIn) {
+        this.service.registerUser(this.registerForm.value).subscribe(result => {
+          this.toastr.success('New user added successfully', 'Success');
+          this.router.navigate(['user']);
+        }, error => {
+          this.toastr.error('Failed to add new user', 'Error');
+        });
+      } else {
+        // Nếu người dùng chưa đăng nhập, thực hiện đăng nhập trước khi đăng ký
+        this.service.registerUser(this.registerForm.value).subscribe(result => {
+          this.toastr.success('Please contact admin for enable access.', 'Registered successfully');
+          this.router.navigate(['login']);
+        }, error => {
+          this.toastr.error('Failed to register', 'Error');
+        });
+      }
     } else {
-      this.toastr.warning('Please enter valid data.')
+      this.toastr.warning('Please enter valid data.', 'Warning');
     }
   }
 

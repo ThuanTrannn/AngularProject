@@ -18,6 +18,16 @@ export class ContentComponent {
     loop:true,
     margin: 10,
     dots: true,
+    autoplay: true,
+    autoplayTimeout:2000,
+    items:1
+  }
+  customOptionsSale: OwlOptions = {
+    loop:true,
+    margin: 10,
+    dots: true,
+    autoplay: true,
+    autoplayTimeout:3000,
     items:1
   }
   constructor(private _http: HttpClient) { 

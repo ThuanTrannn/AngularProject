@@ -1,6 +1,6 @@
 <mat-card>
-  <div class="danh sach">
-    <a (click)="proceedAddNewAccount()">Add new account</a>
+  <div class="list-account p-3">
+    <button class="btn-border color-p text-18" (click)="proceedAddNewAccount()">Add new account</button>
   </div>
   <mat-card-header>
     <h2 class="bold text-color-p mb-0">List Account</h2>
@@ -40,6 +40,7 @@
             <button *ngIf="element.role !=='admin'" (click)="deleteUser(element.id)"
               class="btn-border color-p text-16 ml-8">Delete</button>
             <button (click)="proceedEditAccount(element.id)" class="btn-border color-p text-16 ml-8">Edit</button>
+            <button (click)="viewOrder(element.id)" class="btn-border color-p text-16 ml-8">View Order</button>
           </td>
         </ng-container>
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

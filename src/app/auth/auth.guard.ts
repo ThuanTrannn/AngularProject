@@ -20,8 +20,7 @@ export class AuthGuard implements CanActivate {
           if (this.service.getRole() == 'admin') {
             return true;
           } else {
-            this.router.navigate(['']);
-              this.tostr.warning('You dont have access.')
+            this.router.navigate(['account-detail']);
             return false;
           }
         }else{

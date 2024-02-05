@@ -10,7 +10,7 @@ import { AuthService } from '../../../service/auth.service';
   styleUrl: './checkout.component.css'
 })
 export class CheckoutComponent {
-
+  id: string = "";
   name: string = "";
   email: string = "";
   address: string = "";
@@ -31,6 +31,7 @@ export class CheckoutComponent {
     if (this.authService.isLoggedIn()) {
       this.authService.getCurrentUser().subscribe(userInfo => {
         if (userInfo) {
+          this.id = userInfo.id;
           this.name = userInfo.name;
           this.email = userInfo.email;
           this.address = userInfo.address;
@@ -43,17 +44,40 @@ export class CheckoutComponent {
   }
 
   addOrder() {
-    this.cartService.addOrder(this.name, this.address, this.phone, this.email).subscribe(
-      (response: HttpResponse<any>) => { // Explicitly define the type of response
-        if (response.ok) {
-          this.router.navigate(['/order-success']);
-          this.cartService.clearCart();
-          this.cartItems = [];
-          this.totalPrice = 0;
-          this.loadCart();
-        }
+    // Kiểm tra đăng nhập
+    if (!this.authService.isLoggedIn()) {
+      this.router.navigate(['/login']); // Chuyển hướng đến trang đăng nhập nếu chưa đăng nhập
+      return;
+    }
+  
+    // Lấy thông tin người dùng
+    const currentUser = this.authService.getCurrentUser();
+    currentUser.subscribe(userInfo => {
+      if (userInfo) {
+        this.cartService.addOrder(userInfo.id, this.name, this.address, this.phone, this.email ).subscribe(
+          (response: HttpResponse<any>) => {
+            if (response.ok == false) {
+              alert(response.statusText);
+            } else {
+              // Thêm các sản phẩm trong giỏ hàng vào đơn hàng chi tiết
+              this.cartService.getCartItems().forEach(
+                item => {
+                  this.cartService.orderDetails(userInfo.id, item).subscribe(res =>
+                    console.log(response)
+                  );
+                }
+              );
+  
+              this.router.navigate(['/order-success']); // Chuyển hướng đến trang thông báo đặt hàng thành công
+              this.cartService.clearCart(); // Xóa giỏ hàng
+              this.cartItems = []; // Xóa danh sách sản phẩm trong giỏ hàng
+              this.totalPrice = 0; // Đặt lại tổng giá thành 0
+              this.loadCart(); // Tải lại giỏ hàng nếu cần
+            }
+          }
+        );
       }
-    );
+    });
   }
 
   loadCart() {
