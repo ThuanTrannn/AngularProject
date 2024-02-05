@@ -1,0 +1,49 @@
+<form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+    <div class="alert alert-success">Edit Account</div>
+    <div class="row mb-3">
+        <div class="col-md-6">
+            <label>ID:</label>
+            <input required class="form-control" type="text" formControlName="id">
+        </div>
+        <div class="col-md-6">
+            <label>Name:</label>
+            <input required class="form-control" type="text" formControlName="name">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-md-6">
+            <label>Password:</label>
+            <input required class="form-control" type="password" formControlName="password">
+        </div>
+        <div class="col-md-6">
+            <label>Role:</label>
+            <input required class="form-control" type="text" formControlName="role">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-md-6">
+            <label>Phone:</label>
+            <input required class="form-control" type="text" formControlName="phone">
+        </div>
+        <div class="col-md-6">
+            <label>Is Active:</label>
+            <select formControlName="isactive" class="form-control">
+                <option value="active">Active</option>
+                <option value="inactive">Inactive</option>
+            </select>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-md-6">
+            <label>Password:</label>
+            <input required class="form-control" type="password" formControlName="password">
+        </div>
+        <div class="col-md-6">
+            <label>Address:</label>
+            <input required class="form-control" type="text" formControlName="address">
+        </div>
+    </div>
+    <div class="mb-3">
+        <button class="btn btn-primary" type="submit"> Edit </button>
+    </div>
+</form>

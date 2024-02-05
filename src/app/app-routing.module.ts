@@ -11,6 +11,7 @@ import { ProductsDetailsComponent } from './shared/components/products-details/p
 import { CartComponent } from './shared/components/cart/cart.component'; 
 import { CheckoutComponent } from './shared/components/checkout/checkout.component';
 import { OrderSuccessComponent } from './shared/components/order-success/order-success.component';
+import { EditAccountComponent } from './auth/edit-account/edit-account.component';
 const routes: Routes = [
   {component: HomepagesComponent, path: ''},
   {component: LoginComponent, path: 'login'},
@@ -22,6 +23,7 @@ const routes: Routes = [
   {component: CartComponent, path: 'cart'},
   {component: CheckoutComponent, path: 'checkout' , canActivate: [AuthGuard]},
   {component: OrderSuccessComponent, path: 'order-success' },
+  {component: EditAccountComponent, path: 'edit-account/:id' },
 ];
 
 @NgModule({

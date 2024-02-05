@@ -13,7 +13,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { HttpClientModule } from '@angular/common/http';
 import { ListuserComponent } from './auth/listuser/listuser.component';
-import { UpdatepopupComponent } from './auth/updatepopup/updatepopup.component';
 import { CustomerComponent } from './auth/customer/customer.component';
 import { ProductTypeComponent } from './shared/components/products/product-type/product-type.component';
 import { SidebarComponent } from './shared/components/sidebar/sidebar.component';
@@ -24,6 +23,7 @@ import { AllproductsComponent } from './shared/components/allproducts/allproduct
 import { CartComponent } from './shared/components/cart/cart.component';
 import { CheckoutComponent } from './shared/components/checkout/checkout.component';
 import { OrderSuccessComponent } from './shared/components/order-success/order-success.component';
+import { EditAccountComponent } from './auth/edit-account/edit-account.component';
 
 
 @NgModule({
@@ -34,7 +34,6 @@ import { OrderSuccessComponent } from './shared/components/order-success/order-s
     LoginComponent,
     RegisterComponent,
     ListuserComponent,
-    UpdatepopupComponent,
     CustomerComponent,
     ProductTypeComponent,
     SidebarComponent,
@@ -45,6 +44,7 @@ import { OrderSuccessComponent } from './shared/components/order-success/order-s
     CartComponent,
     CheckoutComponent,
     OrderSuccessComponent,
+    EditAccountComponent,
   ],
   imports: [
     BrowserModule,

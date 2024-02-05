@@ -2,7 +2,6 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable, OnInit, Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { Observable, of, throwError } from 'rxjs';
-import { catchError, map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -18,6 +17,16 @@ export class AuthService {
 
   getCurrentUser(): Observable<any> {
     return this.http.get<any>(this.apiurl + '/' + sessionStorage.getItem('username'));
+  }
+
+  getAccountById(accountId: string) {
+    const url = `${this.apiurl}/${accountId}`;
+    return this.http.get(url);
+  }
+
+  updateAccount(accountId: string, accountData: any) {
+    const url = `${this.apiurl}/${accountId}`;
+    return this.http.put(url, accountData);
   }
  
   registerUser(inputdata: any) {

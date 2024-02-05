@@ -33,7 +33,7 @@ export class CheckoutComponent {
         if (userInfo) {
           this.name = userInfo.name;
           this.email = userInfo.email;
-          this.address = userInfo.address ? userInfo.address.area : '';
+          this.address = userInfo.address;
           this.phone = userInfo.phone;
         }
       });
@@ -45,9 +45,6 @@ export class CheckoutComponent {
   addOrder() {
     this.cartService.addOrder(this.name, this.address, this.phone, this.email).subscribe(
       (response: HttpResponse<any>) => { // Explicitly define the type of response
-        console.log(response);
-        console.log(response.body); // trong body có biến id của order mới chèn
-        console.log(response.ok); // biến ok = true là request ok
         if (response.ok) {
           this.router.navigate(['/order-success']);
           this.cartService.clearCart();

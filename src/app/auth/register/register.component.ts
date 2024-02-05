@@ -11,13 +11,19 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class RegisterComponent {
   constructor(private builder: FormBuilder, private service: AuthService, private router: Router, private toastr: ToastrService) { }
+  isLoggedIn: boolean = false;
+  registrationTitle: string = 'Register';
+  submittrationTitle: string = 'Submit';
+  ngOnInit() {
+    this.isLoggedIn = this.service.isLoggedIn();
+    this.updateRegistrationTitle();
+  }
 
   registerForm = this.builder.group({
     id: this.builder.control('', Validators.compose([Validators.required, Validators.minLength(5)])),
     name: this.builder.control('', Validators.required),
     password: this.builder.control('', Validators.compose([Validators.required, Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}')])),
     email: this.builder.control('', Validators.compose([Validators.required, Validators.email])),
-    gender: this.builder.control('male'),
     role: this.builder.control(''),
     isactive: this.builder.control(false)
   });
@@ -30,6 +36,16 @@ export class RegisterComponent {
       });
     } else {
       this.toastr.warning('Please enter valid data.')
+    }
+  }
+
+  updateRegistrationTitle() {
+    if (this.isLoggedIn) {
+      this.registrationTitle = 'Add New User';
+      this.submittrationTitle = 'Add';
+    } else {
+      this.registrationTitle = 'Register';
+      this.submittrationTitle = 'Submit';
     }
   }
 }
