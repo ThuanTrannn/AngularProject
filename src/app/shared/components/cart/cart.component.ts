@@ -26,6 +26,7 @@ export class CartComponent {
       this.calculateTotalPrice();
     });
   }
+
   proceedToCheckout() {
     if (this.authService.isLoggedIn()) {
       this.router.navigate(['/checkout']); 
@@ -33,6 +34,7 @@ export class CartComponent {
       this.router.navigate(['/login']); 
     }
   }
+  
   calculateTotalPrice(): void {
     this.totalPrice = this.cartItems.reduce((total, item) => {
       if (item.product && item.product.price && item.quantity) {

@@ -72,6 +72,7 @@ export class CustomerComponent {
      this.toastr.warning("You don't have access for Delete")
    }
   }
+  
   addcustomer() {
     if(this.haveadd){
       this.toastr.success('Success')

@@ -1,3 +1,5 @@
+## Project view.
+![Alt text](image-1.png)
 #Module 3
 ## ================== Bài 1 ======================
 Dependency Injection (DI): Là một mô hình quan trọng trong lập trình Angular.
@@ -167,5 +169,3 @@ ComponentFactoryResolver là một service trong Angular, giúp bạn tìm hoặ
 
 Một entry component là một thành phần mà bạn sẽ tạo và thêm vào DOM động (tại thời điểm chạy) bằng cách sử dụng ComponentFactoryResolver và ViewContainerRef. Điều này thường xuyên xảy ra khi bạn muốn tạo và hiển thị một thành phần tại một điểm bất kỳ trong ứng dụng của mình dựa trên logic runtime.
 
-## Project view.
-![Alt text](image.png)

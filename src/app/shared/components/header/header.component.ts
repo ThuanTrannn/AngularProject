@@ -9,7 +9,7 @@ import { AuthService } from '../../../service/auth.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  title = 'authentication';
+  title = 'Angular Project';
   
   constructor(private route: Router, @Inject(PLATFORM_ID) private platformId: Object, private authService: AuthService) { }
 
