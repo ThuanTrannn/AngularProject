@@ -1,12 +1,12 @@
 //cart.service.ts
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit, Inject, PLATFORM_ID } from '@angular/core';
 import { IProducts } from '../interface/products';
 import { CartItem } from '../interface/icart';
 import { BehaviorSubject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
-
+import { isPlatformBrowser } from '@angular/common';
 declare var localStorage: any;
 @Injectable({ providedIn: 'root' })
 export class CartService {
@@ -14,7 +14,7 @@ export class CartService {
     private cartKey = 'cart';
     private cartItemsSubject = new BehaviorSubject<CartItem[]>(this.getCart());
     cartItems$ = this.cartItemsSubject.asObservable();
-    constructor(private http: HttpClient) { }
+    constructor(@Inject(PLATFORM_ID) private platformId: Object, private http: HttpClient) { }
 
     addToCart(product: IProducts) {
         let cart = this.getCart();
@@ -28,8 +28,11 @@ export class CartService {
     }
 
     getCart(): CartItem[] {
-        const cartData = localStorage.getItem(this.cartKey);
-        return cartData ? JSON.parse(cartData) : [];
+        if (isPlatformBrowser(this.platformId)) {
+            const cartData = localStorage.getItem(this.cartKey);
+            return cartData ? JSON.parse(cartData) : [];
+        }
+        return [];
     }
 
     removeCartItem(productId: number): void {
@@ -49,13 +52,17 @@ export class CartService {
     }
 
     private saveCart(cart: CartItem[]): void {
-        localStorage.setItem(this.cartKey, JSON.stringify(cart));
-        this.cartItemsSubject.next(cart);
+        if (isPlatformBrowser(this.platformId)) {
+            localStorage.setItem(this.cartKey, JSON.stringify(cart));
+            this.cartItemsSubject.next(cart);
+        }
     }
 
     clearCart() {
-        if (typeof localStorage !== 'undefined') {
-            localStorage.removeItem(this.cartKey);
+        if (isPlatformBrowser(this.platformId)) {
+            if (typeof localStorage !== 'undefined') {
+                localStorage.removeItem(this.cartKey);
+            }
         }
         let cart = this.getCart();
         this.saveCart(cart);
