@@ -26,15 +26,16 @@ export class LoginComponent {
 
   result: any;
 
+  // Tạo một form buider với trường id và pass
   loginForm = this.builder.group({
-    id: this.builder.control('', Validators.required),
+    id: this.builder.control('', Validators.required), // Cung cấp các validator để kiểm tra dữ liệu trong Reactive Forms.
     password: this.builder.control('', Validators.required)
   });
 
-  
+  // Xử lý sự kiện khi người dùng nhấn nút đăng nhập.
   proceedLogin() {
     if (this.loginForm.valid) {
-      this.service.GetUserbyCode(this.loginForm.value.id).subscribe(item => {
+      this.service.getUserByCode(this.loginForm.value.id).subscribe(item => {
         this.result = item;
 
         if (this.result.password === this.loginForm.value.password) {
@@ -53,9 +54,5 @@ export class LoginComponent {
     } else {
       this.toastr.warning('Please enter valid data.');
     }
-  }
-  proceedLoginAndClosePopup() {
-    this.proceedLogin();
-    this.router.navigate(['/register']);
   }
 }

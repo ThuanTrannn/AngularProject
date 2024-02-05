@@ -1,0 +1,53 @@
+<section class="trending flex-col">
+    <section class="categories">
+        <ul class="d-flex">
+          <li *ngFor="let category of categories">
+            <a href="#">{{ category }}</a>
+          </li>
+        </ul>
+    </section>
+    <div class="trending-cards not-mar">
+        <div *ngFor="let nft of getPaginatedProducts()" class="white-box">
+            <a [routerLink]="['/products', nft.id]">
+                <img [src]="nft.image" alt="{{ nft.title }} Image"
+                    class="big-pic">
+                <div>
+                    <div class="trending-card-bottom">
+                        <div class="text ml-8">
+                            <div class="text-500 text-black">{{
+                                nft.title }}</div>
+                            <div
+                                class="text-12 text-dark-gray">{{
+                                nft.artist }}</div>
+                        </div>
+                    </div>
+                    <div class="trending-price">
+                        <svg width="24" height="24"
+                            viewBox="0 0 12 12" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M6 0.875L2.875 6.125L6 8L9.125 6.125L6 0.875ZM2.875 6.75L6 11.125L9.125 6.75L6 8.625L2.875 6.75Z"
+                                fill="white" />
+                        </svg>
+                        <div class="text-20 font-number">Price: {{
+                            nft.price.value }}<span
+                                class="ml-4">{{
+                                nft.price.currency }}</span></div>
+                    </div>
+                </div>
+            </a>
+            <div class="addTo">
+                <button class="addtocart w-100" (click)="addToCart(nft)">Add To Cart</button>
+            </div>
+        </div>
+    </div>
+    <div class="pagination">
+        <button (click)="onPageChange(currentPage - 1)" [disabled]="currentPage === 1">
+            <svg fill="#fff" height="20px" width="20px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 476.213 476.213" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <polygon points="476.213,223.107 57.427,223.107 151.82,128.713 130.607,107.5 0,238.106 130.607,368.714 151.82,347.5 57.427,253.107 476.213,253.107 "></polygon> </g></svg>
+        </button>
+        <span>Page {{ currentPage }}</span>
+        <button (click)="onPageChange(currentPage + 1)" [disabled]="currentPage * productsPerPage >= allProducts.length" class="next-rote">
+            <svg fill="#fff" height="20px" width="20px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 476.213 476.213" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <polygon points="476.213,223.107 57.427,223.107 151.82,128.713 130.607,107.5 0,238.106 130.607,368.714 151.82,347.5 57.427,253.107 476.213,253.107 "></polygon> </g></svg>
+        </button>
+    </div>
+</section>

@@ -5,8 +5,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { AuthService } from '../../service/auth.service';
 import { MatDialog } from '@angular/material/dialog';
-import { UpdatepopupComponent } from '../updatepopup/updatepopup.component'
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-listuser',
   templateUrl: './listuser.component.html',
@@ -14,7 +13,10 @@ import { UpdatepopupComponent } from '../updatepopup/updatepopup.component'
 })
 export class ListuserComponent implements AfterViewInit {
 
-  constructor(private builder: FormBuilder, private service: AuthService, private dialog: MatDialog) {
+  constructor(private builder: FormBuilder,
+    private service: AuthService,
+    private dialog: MatDialog,
+    private router: Router) {
     this.LoadUser();
   }
   userlist: any;
@@ -25,7 +27,7 @@ export class ListuserComponent implements AfterViewInit {
   ngAfterViewInit(): void { }
 
   LoadUser() {
-    this.service.Getall().subscribe(res => {
+    this.service.getAll().subscribe(res => {
       this.userlist = res;
       this.dataSource = new MatTableDataSource(this.userlist);
       this.dataSource.paginator = this.paginator;
@@ -34,21 +36,27 @@ export class ListuserComponent implements AfterViewInit {
   }
   displayedColumns: string[] = ['username', 'name', 'email', 'status', 'role', 'action'];
 
-  updateuser(code: any) {
-    this.OpenDialog('600ms', '300ms', code);
+  deleteUser(userId: string): void {
+    this.service.deleteAccount(userId).subscribe(
+      response => {
+        console.log('User deleted successfully');
+        this.LoadUser();
+      },
+      error => {
+        console.error('Error deleting user:', error);
+      }
+    );
   }
 
-  OpenDialog(enteranimation: any, exitanimation: any, code: string) {
-    const popup = this.dialog.open(UpdatepopupComponent, {
-      enterAnimationDuration: enteranimation,
-      exitAnimationDuration: exitanimation,
-      width: '30%',
-      data: {
-        usercode: code
-      }
-    });
-    popup.afterClosed().subscribe(res => {
-      this.LoadUser();
-    });
+  proceedAddNewAccount(){
+    this.router.navigate(['/register']); 
+  }
+
+  proceedEditAccount(userId: string) {
+    this.router.navigate(['/edit-account', userId]); 
+  }
+
+  viewOrder(userId: string) {
+    this.router.navigate(['/order-details'], { queryParams: { userId: userId } });
   }
 }

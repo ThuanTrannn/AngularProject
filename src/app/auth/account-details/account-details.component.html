@@ -1,0 +1,48 @@
+<form [formGroup]="editForm">
+    <div class="alert alert-success">Edit Account</div>
+    <div class="mb-3">
+        <button class="btn-border color-p text-16" (click)="viewOrder(userId)"> YOUR ORDER </button>
+    </div>
+    <div class="row mb-3">
+        <div class="col-md-6">
+            <label>ID:</label>
+            <input required class="form-control" type="text"
+                formControlName="id">
+        </div>
+        <div class="col-md-6">
+            <label>Name:</label>
+            <input required class="form-control" type="text"
+                formControlName="name">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-md-4">
+            <label>Password:</label>
+            <input required class="form-control" type="password"
+                formControlName="password">
+        </div>
+
+        <div class="col-md-4">
+            <label>Phone:</label>
+            <input required class="form-control" type="text"
+                formControlName="phone">
+        </div>
+
+        <div class="col-md-4">
+            <label>Address:</label>
+            <input required class="form-control" type="text"
+                formControlName="address">
+        </div>
+    </div>
+    <div class="mb-3">
+        <button *ngIf="isFormDisabled" (click)="toggleEditMode()"
+            class="btn-border color-p text-16">
+            Edit
+        </button>
+
+        <button *ngIf="!isFormDisabled" (click)="onSubmit()"
+            class="btn-border color-p text-16">
+            Save
+        </button>
+    </div>
+</form>

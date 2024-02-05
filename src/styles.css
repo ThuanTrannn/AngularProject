@@ -1743,9 +1743,9 @@ body {
 .container {
     max-width: 1280px;
     padding: 0;
-    max-height: max-content;
+    max-height: 90vh;
     width: 100%;
-    height: max-content;
+    height: 90vh;
     background-color: #fff;
     backdrop-filter: blur(18px);
     border-radius: 40px;
@@ -1792,6 +1792,7 @@ body {
     margin-left: 10px;
 }
 
+.left-nav li a span,
 .left-nav li a {
     display: flex;
     align-items: center;
@@ -1799,6 +1800,10 @@ body {
     color: #bab6be;
     padding: 0.5rem;
     transition: all 0.3s ease-out;
+}
+
+.left-nav li a span {
+    padding: 0;
 }
 
 .left-nav li a:hover {
@@ -1819,6 +1824,7 @@ body {
     filter: invert(94%) sepia(10%) saturate(0%) hue-rotate(244deg) brightness(104%) contrast(108%);
 }
 
+.left-nav li.active a span,
 .left-nav li.active a {
     color: #fff;
 }
@@ -1832,6 +1838,11 @@ main {
     border-radius: 40px;
     width: calc(100% - 180px);
     padding: 2rem;
+    overflow: auto;
+}
+
+main::-webkit-scrollbar {
+    width: 0;
 }
 
 @media (max-width: 48em) {
@@ -1850,6 +1861,10 @@ header {
     display: flex;
     width: 100%;
     margin-bottom: 1rem;
+}
+
+.flex-col {
+    flex-direction: column;
 }
 
 header .search-bar {
@@ -2008,6 +2023,10 @@ header .new-notif {
     margin-left: 1.25rem;
 }
 
+.trending-cards.not-mar {
+    margin: 0;
+}
+
 .trending-cards.layout1 {
     display: block;
     margin: 0;
@@ -2071,6 +2090,21 @@ header .new-notif {
     align-items: center;
     white-space: nowrap;
     border: 5px solid #fff;
+}
+
+.addtocart {
+    background-color: #7f30a4;
+    color: #fff;
+    padding: 13px 16px;
+    border-radius: 40px;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    border: none;
+    min-width: 240px;
+    text-align: center;
+    justify-content: center;
 }
 
 .trending-cards.layout1 .trending-price {
@@ -2237,9 +2271,9 @@ body.dark-theme .logo2 {
 
 body.dark-theme .container {
     max-width: 1280px;
-    max-height: max-content;
+    max-height: 90vh;
     width: 100%;
-    height: max-content;
+    height: 90vh;
     background-color: #312934;
     color: #f3f3f3;
     backdrop-filter: blur(18px);
@@ -2271,8 +2305,8 @@ body.dark-theme .mat-mdc-icon-button[disabled] .mat-mdc-paginator-icon {
 
 body.dark-theme .table-responsive .table td,
 body.dark-theme .table-responsive .table th {
-    background-color: #312934;
-    color: #f3f3f3;
+    background-color: #312934 !important;
+    color: #f3f3f3 !important;
 }
 
 body.dark-theme .mdc-notched-outline__leading, 
@@ -2753,4 +2787,55 @@ body.dark-theme .color-scheme .checkbox:checked+label .dark svg {
 
 body.dark-theme .color-scheme .checkbox:checked+label .ball {
     background-color: #7f30a4;
+}
+
+.pagination {
+    align-items: center;
+    justify-content: center;
+    padding: 16px 0;
+}
+
+.pagination button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #7f30a4;
+    border: none;
+    box-shadow: none;
+    color: #fff;
+    margin: 0 16px;
+}
+
+.pagination button svg  {
+    font-size: 16px;
+}
+
+.next-rote {
+    transform: rotate(180deg);
+}
+
+.categories ul {
+    justify-content: center;
+    align-items: center;
+    text-transform: capitalize;
+    margin: 0 0 20px;
+}
+
+.categories ul li {
+    padding: 0 16px;
+}
+
+.form-control:focus {
+    border: none;
+    box-shadow: none;
+}
+
+body.dark-theme .table > :not(caption) > * > *,
+body.dark-theme .total,
+body.dark-theme .cart_table th {
+    background-color: #312934 !important;
+    color: #f3f3f3 !important;
+}
+body.dark-theme .table > :not(caption) > * > button {
+    background-color: #7f30a4 !important;
 }

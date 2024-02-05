@@ -1,0 +1,89 @@
+.cart_table {
+    table-layout: fixed;
+}
+
+.cart_table .product-item h3 {
+    margin: 0 0 16px;
+}
+
+.product_name {
+    display: inline-flex;
+    width: 100%;
+    align-items: center;
+}
+
+.product_name img,
+.product_name span {
+    display: inline-block;
+}
+
+.product_name span {
+    padding-left: 16px;
+}
+
+.cart_table th {
+    background-color: #fff;
+    padding: 16px 0;
+    text-align: center;
+    font-size: 18px;
+    border-bottom: 1px solid;
+}
+
+.cart_table td {
+    vertical-align: middle;
+    padding: 16px 10px;
+}
+
+.cart_table tr:not(:first-child) {
+    border-top: 1px solid;
+}
+
+.cart_table td:not(.product_name) {
+    text-align: center;
+}
+
+.cart_table td p {
+    margin: 0;
+}
+
+button {
+    background-color: #7f30a4;
+    color: #fff;
+    padding: 13px 16px;
+    border-radius: 40px;
+    z-index: 2;
+    white-space: nowrap;
+    border: none;
+    text-align: center;
+}
+
+.total {
+    background: #fff;
+    padding: 20px;
+    border-top: 1px solid;
+}
+
+.total table {
+    margin: 0;
+}
+
+.total table tr td:first-child {
+    font-size: 18px;
+    text-transform: capitalize;
+    font-weight: 500;
+}
+
+.total table tr td:last-child {
+    font-size: 16px;
+    text-transform: capitalize;
+    font-weight: 500;
+    text-align: right;
+}
+
+.total table tr td {
+    padding-bottom: 16px;
+}
+
+.total table tr:last-child td {
+    padding-bottom: 0;
+}

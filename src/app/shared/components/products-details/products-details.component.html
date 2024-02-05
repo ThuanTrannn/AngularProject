@@ -1,0 +1,26 @@
+<div *ngIf="productsDetails">
+    <div class="pb-10 pt-10 breadcrumbs">
+        <a routerLink="/home" class="text-16 font-number">Home</a> /
+        <span class="text-16 font-number">{{ productsDetails.title }}</span>
+    </div>
+    <div class="pro-details-component d-flex">
+        <div class="details-images w-30">
+            <img src="{{ productsDetails.image }}"
+                alt="{{ productsDetails.title }}">
+        </div>
+        <div class="details-content w-70 pl-16">
+            <p class="mb-12">Category: {{ productsDetails.category }}</p>
+            <p class="text-16 mb-12">{{ productsDetails.title }} - Brand: {{ productsDetails.artist }}</p>
+            <div *ngIf="productsDetails.price">
+                <p class="text-16">Price: {{ productsDetails.price.value }} {{
+                    productsDetails.price.currency }}</p>
+            </div>
+            <div class="addTo">
+                <button class="addtocart" (click)="addToCart(productsDetails)">Add To Cart</button>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="productsDetails.description" class="mt-16">
+        <p>Description: {{ productsDetails.description }}</p>
+    </div>
+</div>

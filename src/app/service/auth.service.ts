@@ -1,52 +1,80 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, OnInit, Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
+import { Observable, of, throwError } from 'rxjs';
+
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  constructor(@Inject(PLATFORM_ID) private platformId: Object, private http: HttpClient) { }
+  private currentUser: any;
+  constructor(
+    @Inject(PLATFORM_ID) private platformId: Object,
+    private http: HttpClient
+  ) {}
 
   apiurl = 'http://localhost:3000/user';
 
-  RegisterUser(inputdata: any) {
+  getCurrentUser(): Observable<any> {
+    return this.http.get<any>(this.apiurl + '/' + sessionStorage.getItem('username'));
+  }
+
+  getAccountById(accountId: string) {
+    const url = `${this.apiurl}/${accountId}`;
+    return this.http.get(url);
+  }
+
+  updateAccount(accountId: string, accountData: any) {
+    const url = `${this.apiurl}/${accountId}`;
+    return this.http.put(url, accountData);
+  }
+ 
+  registerUser(inputdata: any) {
     return this.http.post(this.apiurl, inputdata)
   }
 
-  GetUserbyCode(id: any) {
+  getUserByCode(id: any) {
     return this.http.get(this.apiurl + '/' + id);
   }
 
-  Getall() {
+  getAll() {
     return this.http.get(this.apiurl);
   }
 
-  updateuser(id: any, inputdata: any) {
+  updateUser(id: any, inputdata: any) {
     return this.http.put(this.apiurl + '/' + id, inputdata);
   }
 
-  getuserrole() {
+  getUserRole() {
     return this.http.get('http://localhost:3000/role');
   }
 
-  isLoggedIn() {
+  isLoggedIn(): boolean {
     if (isPlatformBrowser(this.platformId)) {
       return sessionStorage.getItem('username') != null;
     }
-  
     return false;
   }
 
-  getrole() {
+  login(user: any): void {
+    if (isPlatformBrowser(this.platformId)) {
+      sessionStorage.setItem('userData', JSON.stringify(user));
+      this.currentUser = user;
+    }
+  }
+
+  getRole() {
     if (isPlatformBrowser(this.platformId)) {
       return sessionStorage.getItem('role') != null ? sessionStorage.getItem('role')?.toString() : '';
     }
     return false;
   }
-  GetAllCustomer() {
+
+  getAllCustomer() {
     return this.http.get('http://localhost:3000/customer');
   }
-  Getaccessbyrole(role: any, menu: any) {
+
+  getAccessByRole(role: any, menu: any) {
     return this.http.get('http://localhost:3000/roleaccess?role=' + role + '&menu=' + menu)
   }
 
@@ -54,8 +82,10 @@ export class AuthService {
     return this.http.delete(this.apiurl + '/' + id);
   }
 
-  logout() {
+  logOut() {
     if (isPlatformBrowser(this.platformId)) {
+      this.currentUser = null;
+      sessionStorage.removeItem('userData');
       sessionStorage.removeItem('username');
       sessionStorage.removeItem('role');
     }

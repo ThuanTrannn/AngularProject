@@ -1,6 +1,9 @@
 <mat-card>
+  <div class="list-account p-3">
+    <button class="btn-border color-p text-18" (click)="proceedAddNewAccount()">Add new account</button>
+  </div>
   <mat-card-header>
-    <h2 class="bold text-color-p mb-0">List User</h2>
+    <h2 class="bold text-color-p mb-0">List Account</h2>
   </mat-card-header>
   <mat-card-content>
     <div class="table-responsive nft-custom-scroll">
@@ -27,23 +30,24 @@
         </ng-container>
         <ng-container matColumnDef="role">
           <th *matHeaderCellDef> Role </th>
-          <td *matCellDef="let element"> {{element.role ===''?
-            'Un Assigned':element.role}} </td>
+          <td *matCellDef="let element">
+            {{element.role ===''? 'Supper Admin':element.role}}
+          </td>
         </ng-container>
         <ng-container matColumnDef="action">
           <th *matHeaderCellDef> Action </th>
           <td *matCellDef="let element">
-            <button *ngIf="element.role !=='admin'" (click)="updateuser(element.id)" class="btn-border color-p text-16">Update</button>
-            <button *ngIf="element.role !=='admin'" (click)="updateuser(element.id)" class="btn-border color-p text-16 ml-8">Delete</button>
+            <button *ngIf="element.role !=='admin'" (click)="deleteUser(element.id)"
+              class="btn-border color-p text-16 ml-8">Delete</button>
+            <button (click)="proceedEditAccount(element.id)" class="btn-border color-p text-16 ml-8">Edit</button>
+            <button (click)="viewOrder(element.id)" class="btn-border color-p text-16 ml-8">View Order</button>
           </td>
         </ng-container>
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
       </table>
 
-      <mat-paginator [pageSizeOptions]="[5, 10, 20]"
-        showFirstLastButtons
-        aria-label="Select page of periodic elements">
+      <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons aria-label="Select page of periodic elements">
       </mat-paginator>
     </div>
   </mat-card-content>
